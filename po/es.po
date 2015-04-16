@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: directives/menu/venue-menu.html:15
+msgid "BTN_CLEAR"
+msgstr "Limpiar"
+
+#: views/home.html:50
+msgid "BTN_EDIT_FLOOR"
+msgstr "Editar Área"
+
+#: views/home.html:49
+msgid "BTN_EDIT_TABLES"
+msgstr "Editar Mesas"
+
+#: views/tab-payment.html:18
+msgid "BTN_EVEN_SPLIT_SUBTAB"
+msgstr "Partes Iguales"
+
+#: views/tab-payment.html:17
+msgid "BTN_FULL_SUBTAB"
+msgstr "Pagar Todo"
+
+#. Verb
+#: views/begin.html:28
+msgid "BTN_GO"
+msgstr "Vamos"
+
+#: views/tab-payment.html:19
+msgid "BTN_NEW_SUBTAB"
+msgstr "Pagar Parte"
+
+#: directives/venue-tab.html:69
+msgid "BTN_OPEN"
+msgstr "Abrir"
+
+#: directives/venue-tab.html:13 views/home.html:47
+msgid "BTN_SERVE"
+msgstr "Preparar"
+
+#: directives/menu/venue-menu-list.html:17 directives/menu/venue-menu.html:19
+msgid "BTN_SPEC_PREP"
+msgstr "Especial"
+
+#: views/begin.html:24
+msgid "COMMON_CURRENT_VENUE_IS"
+msgstr "El local seleccionado  es"
+
+#. Verb
+#: directives/menu/venue-menu-list.html:12 directives/menu/venue-menu.html:12
+#: views/home.html:32
+msgid "COMMON_FIND"
+msgstr "Buscar"
+
+#: views/begin.html:10
+msgid "COMMON_LOGIN_USERNAME"
+msgstr "¿Quién eres?"
+
+#: directives/menu/venue-submenu-list.html:18
+msgid "COMMON_MINPAX"
+msgstr "Min pax"
+
+#: views/till.html:28
+msgid "COMMON_OPENED"
+msgstr "Apertura"
+
+#: directives/venue-tab.html:61 views/till.html:20
+msgid "COMMON_PAX"
+msgstr "Pax"
+
+#: views/till.html:49
+msgid "COMMON_PAY"
+msgstr "Pagar"
+
+#: views/begin.html:4
+msgid "COMMON_START"
+msgstr "Inicio"
+
+#: views/till.html:50
+msgid "COMMON_STATS"
+msgstr "Estadísticas"
+
+#: views/till.html:32
+msgid "COMMON_STATUS"
+msgstr "Estatus"
+
+#: views/tab-payment.html:51
+msgid "COMMON_SUBTAB"
+msgstr "Cuenta Parcial"
+
+#: directives/venue-tab.html:3 views/tab-payment.html:8 views/till.html:16
+#: views/till.html:48
+msgid "COMMON_TAB"
+msgstr "Cuenta"
+
+#: views/till.html:12
+msgid "COMMON_TABLE"
+msgstr "Mesa"
+
+#: directives/venue-tab.html:57 views/till.html:24
+msgid "COMMON_TAG"
+msgstr "Etiqueta"
+
+#: views/till.html:4
+msgid "COMMON_TILL"
+msgstr "Caja Registradora"
+
+#: views/home.html:8
+msgid "COMMON_TOGGLE_NAV"
+msgstr "Navegación"
+
+#: views/begin.html:26
+msgid "COMMON_WILL_SELECT_VENUE"
+msgstr "Estás seleccionando el local"
+
+#: views/home.html:62
+msgid "LANG_EN"
+msgstr "Inglés"
+
+#: views/home.html:61
+msgid "LANG_ES"
+msgstr "Español"
+
+#: views/home.html:56
+msgid "MENU_LANG"
+msgstr "Idioma"
+
+#: views/home.html:42
+msgid "MENU_MODE"
+msgstr "Modo"
+
+#: directives/menu/venue-menu-list.html:14 directives/menu/venue-menu.html:13
+msgid "PHOLD_SEARCH_MENU"
+msgstr "Buscar en menu"
+
+#: views/home.html:33
+msgid "PHOLD_SEARCH_TABLES"
+msgstr "Buscar mesa"
+
+#: app/js/models/MenuItem.js:21
+msgid "PRICING_FIXED"
+msgstr "Precio Fijo"
+
+#: app/js/models/MenuItem.js:22
+msgid "PRICING_MARKET"
+msgstr "Precio del día"
+
+#: views/begin.html:15
+msgid "Q_CHOOSE_VENUE"
+msgstr "¿Qué local estamos atendiendo hoy?"
+
+#: directives/venue-tab.html:49
+msgid "Q_OPEN_NEW_TAB"
+msgstr "¿Quieres abrir una cuenta en esta mesa?"
+
+#: app/js/models/Tab.js:200
+msgid "TAB_STATUS_CLOSED"
+msgstr "Cerrada"
+
+#: app/js/models/Tab.js:193
+msgid "TAB_STATUS_NEW"
+msgstr "Nueva"
+
+#: app/js/models/Tab.js:201
+msgid "TAB_STATUS_PROBLEM"
+msgstr "Problema"
+
+#: app/js/models/Tab.js:194
+msgid "TAB_STATUS_SERVING"
+msgstr "Sirviendo"
+
+#: app/js/models/Tab.js:198
+msgid "TAB_STATUS_WAITCHECK"
+msgstr "Esperando la cuenta"
+
+#: app/js/models/TabItem.js:31
+msgid "TABITEM_STATUS_NEW"
+msgstr "Nuevo"
+
+#: app/js/models/TabItem.js:32
+msgid "TABITEM_STATUS_ORDERED"
+msgstr "Pedido"
+
+#: app/js/models/TabItem.js:34
+msgid "TABITEM_STATUS_PAID"
+msgstr "Pagado"
+
+#: app/js/models/TabItem.js:35
+msgid "TABITEM_STATUS_SENTBACK"
+msgstr "Devuelto"
+
+#: app/js/models/TabItem.js:33
+msgid "TABITEM_STATUS_SERVED"
+msgstr "Servido"
+
+#: app/js/models/TabItem.js:36
+msgid "TABITEM_STATUS_SPILLED"
+msgstr "Derramado"
+
+#~ msgid "BTN_EDIT_VENUE"
+#~ msgstr "Editar"
+
+#~ msgid "MENU_OPTIONS"
+#~ msgstr "Opciones"
+
+#~ msgid "Current venue is <b><i>{{venue.name}}</i></b>"
+#~ msgstr "El local seleccionado es <b><i>{{venue.name}}</i></b>"
+
+#~ msgid "Go!"
+#~ msgstr "Vamos!"
+
+#~ msgid "Start"
+#~ msgstr "Inicio"
+
+#~ msgid "What venue are we hosting?"
+#~ msgstr "¿Qué local atendemos hoy?"
+
+#~ msgid "Who are you?"
+#~ msgstr "¿Quién eres?"
+
+#~ msgid "You will select venue <b><i>{{venues[venueIndex].name}}</i></b>"
+#~ msgstr "Estás seleccionando el local <b><i>{{venues[venueIndex].name}}</i></b>"
+
+#~ msgid "New"
+#~ msgstr "Nuevo"
+
+#~ msgid "Ordered"
+#~ msgstr "Pedido"
+
+#~ msgid "Sent back"
+#~ msgstr "Devuelto"
+
+#~ msgid "Served"
+#~ msgstr "Servido"
+
+#~ msgid "Spilled"
+#~ msgstr "Derramado"

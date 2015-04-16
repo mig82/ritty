@@ -1,0 +1,51 @@
+{
+  "name": "Ritty",
+  "version": "0.0.1",
+  "description": "A Chrome-based cash register application for restaurants and bars.",
+  "main": "index.html",
+  "keywords": [
+    "ritty",
+    "ritti",
+    "rytty",
+    "rytti",
+    "rity",
+    "ryty",
+    "ryti",
+    "ryty",
+    "cash",
+    "register",
+    "cash register",
+    "caja",
+    "registradora",
+    "till",
+    "venue",
+    "food",
+    "beverage",
+    "restaurant",
+    "bar",
+    "cocktail",
+    "pub",
+    "tab",
+    "comanda",
+    "comandas",
+    "billing",
+    "facturacion",
+    "sme",
+    "pyme"
+  ],
+  "authors": [
+    "Miguelangel Fernandez"
+  ],
+  "license": "no license",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-gettext": "~2.0.3"
+  }
+}

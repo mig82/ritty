@@ -1,0 +1,63 @@
+{
+	"tables" : [
+		{"id": "v2.t1", "venue_id": "v2", "table_id": "t1", "shape":"ellipse", "x":0,	"y":0,		"w":100,	"h":50,		"rotation":0.00},
+		{"id": "v2.t2", "venue_id": "v2", "table_id": "t2", "shape":"ellipse", "x":300,	"y":50,		"w":50,		"h":100,	"rotation":0.00},
+		{"id": "v2.t3", "venue_id": "v2", "table_id": "t3", "shape":"ellipse", "x":100,	"y":200,	"w":50,		"h":50,		"rotation":0.00},
+		{"id": "v2.t4", "venue_id": "v2", "table_id": "t4", "shape":"rect",    "x":200,	"y":200,	"w":50,		"h":100,	"rotation":0.00},
+		{"id": "v2.t5", "venue_id": "v2", "table_id": "t5", "shape":"rect",    "x":885,	"y":41,		"w":100,	"h":50,		"rotation":0.00}
+	],
+	"menus" : [
+		{
+			"id": "v2.m1",
+			"venue_id": "v2",
+			"menu_id": "m1",
+			"title": "Dinner Menu",
+			"description": "Some of the finest creations of our chef with a...",
+			"submenus": [
+				{
+					"title" : "Main Courses",
+					"description": "Our main courses offer a variety of...",
+					"items": [
+						{"title": "Lamb chops", 		"description": "Delicious lamb chops with...",	"pricing": "PRICING_FIXED", "price": 40.00, 	"minpax": 2, "callories": 1000, "eta": 20,	"tags": ["seafood", "chefs specialty"]},
+						{"title": "Lamb chops", 		"description": "Delicious lamb chops with...",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 10,	"tags": ["very spicy", "chefs specialty"]},
+						{"title": "Grilled salmon",		"description": "Delicious griled salmon",		"pricing": "PRICING_FIXED", "price": 18.00, 	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["chefs specialty"]},
+						{"title": "Cucumber carpaccio", "description": "Raw cucumber with parmessan",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["vegetarian"]},
+						{"title": "Mahalo Lobster", 	"description": "Hawaian style lobster",			"pricing": "PRICING_MARKET", "price": 0.0,		"minpax": 2, "callories": 2000,	"eta": 15,	"tags": ["from the sea", "chefs specialty"]},
+
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]},
+						{"title": "Some item", 	"description": "Some description",	"pricing": "PRICING_FIXED", "price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["tag1"]}
+
+
+					]
+				},
+				{
+					"title" : "Desserts",
+					"description": "All the sweetness of...",
+					"items": [
+						{"title": "Tiramisu", 				"description": "Classic italian tiramisu.",	"price": 15.00, 	"minpax": 2, "callories": 1200, "eta": 10,	"tags": ["chefs specialty"]},
+						{"title": "Chocolate Panna Cotta",	"description": "Cocoa and milk cream...",	"price": 18.00, 	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["chefs specialty", "80% Cocoa"]},
+
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]},
+						{"title": "Some dessert", 				"description": "Something sweet",	"pricing": "PRICING_FIXED", "price": 15.00, 	"minpax": 1, "callories": 1200, "eta": 5,	"tags": ["chefs specialty"]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: directives/menu/venue-menu.html:15
+msgid "BTN_CLEAR"
+msgstr ""
+
+#: views/home.html:50
+msgid "BTN_EDIT_FLOOR"
+msgstr ""
+
+#: views/home.html:49
+msgid "BTN_EDIT_TABLES"
+msgstr ""
+
+#: views/tab-payment.html:18
+msgid "BTN_EVEN_SPLIT_SUBTAB"
+msgstr ""
+
+#: views/tab-payment.html:17
+msgid "BTN_FULL_SUBTAB"
+msgstr ""
+
+#. Verb
+#: views/begin.html:28
+msgid "BTN_GO"
+msgstr ""
+
+#: views/tab-payment.html:19
+msgid "BTN_NEW_SUBTAB"
+msgstr ""
+
+#: directives/venue-tab.html:69
+msgid "BTN_OPEN"
+msgstr ""
+
+#: directives/venue-tab.html:13
+#: views/home.html:47
+msgid "BTN_SERVE"
+msgstr ""
+
+#: directives/menu/venue-menu-list.html:17
+#: directives/menu/venue-menu.html:19
+msgid "BTN_SPEC_PREP"
+msgstr ""
+
+#: views/begin.html:24
+msgid "COMMON_CURRENT_VENUE_IS"
+msgstr ""
+
+#. Verb
+#: directives/menu/venue-menu-list.html:12
+#: directives/menu/venue-menu.html:12
+#: views/home.html:32
+msgid "COMMON_FIND"
+msgstr ""
+
+#: views/begin.html:10
+msgid "COMMON_LOGIN_USERNAME"
+msgstr ""
+
+#: directives/menu/venue-submenu-list.html:18
+msgid "COMMON_MINPAX"
+msgstr ""
+
+#: views/till.html:28
+msgid "COMMON_OPENED"
+msgstr ""
+
+#: directives/venue-tab.html:61
+#: views/till.html:20
+msgid "COMMON_PAX"
+msgstr ""
+
+#: views/till.html:49
+msgid "COMMON_PAY"
+msgstr ""
+
+#: views/begin.html:4
+msgid "COMMON_START"
+msgstr ""
+
+#: views/till.html:50
+msgid "COMMON_STATS"
+msgstr ""
+
+#: views/till.html:32
+msgid "COMMON_STATUS"
+msgstr ""
+
+#: views/tab-payment.html:51
+msgid "COMMON_SUBTAB"
+msgstr ""
+
+#: directives/venue-tab.html:3
+#: views/tab-payment.html:8
+#: views/till.html:16
+#: views/till.html:48
+msgid "COMMON_TAB"
+msgstr ""
+
+#: views/till.html:12
+msgid "COMMON_TABLE"
+msgstr ""
+
+#: directives/venue-tab.html:57
+#: views/till.html:24
+msgid "COMMON_TAG"
+msgstr ""
+
+#: views/till.html:4
+msgid "COMMON_TILL"
+msgstr ""
+
+#: views/home.html:8
+msgid "COMMON_TOGGLE_NAV"
+msgstr ""
+
+#: views/begin.html:26
+msgid "COMMON_WILL_SELECT_VENUE"
+msgstr ""
+
+#: views/home.html:62
+msgid "LANG_EN"
+msgstr ""
+
+#: views/home.html:61
+msgid "LANG_ES"
+msgstr ""
+
+#: views/home.html:56
+msgid "MENU_LANG"
+msgstr ""
+
+#: views/home.html:42
+msgid "MENU_MODE"
+msgstr ""
+
+#: directives/menu/venue-menu-list.html:14
+#: directives/menu/venue-menu.html:13
+msgid "PHOLD_SEARCH_MENU"
+msgstr ""
+
+#: views/home.html:33
+msgid "PHOLD_SEARCH_TABLES"
+msgstr ""
+
+#: app/js/models/MenuItem.js:21
+msgid "PRICING_FIXED"
+msgstr ""
+
+#: app/js/models/MenuItem.js:22
+msgid "PRICING_MARKET"
+msgstr ""
+
+#: views/begin.html:15
+msgid "Q_CHOOSE_VENUE"
+msgstr ""
+
+#: directives/venue-tab.html:49
+msgid "Q_OPEN_NEW_TAB"
+msgstr ""
+
+#: app/js/models/Tab.js:200
+msgid "TAB_STATUS_CLOSED"
+msgstr ""
+
+#: app/js/models/Tab.js:193
+msgid "TAB_STATUS_NEW"
+msgstr ""
+
+#: app/js/models/Tab.js:201
+msgid "TAB_STATUS_PROBLEM"
+msgstr ""
+
+#: app/js/models/Tab.js:194
+msgid "TAB_STATUS_SERVING"
+msgstr ""
+
+#: app/js/models/Tab.js:198
+msgid "TAB_STATUS_WAITCHECK"
+msgstr ""
+
+#: app/js/models/TabItem.js:31
+msgid "TABITEM_STATUS_NEW"
+msgstr ""
+
+#: app/js/models/TabItem.js:32
+msgid "TABITEM_STATUS_ORDERED"
+msgstr ""
+
+#: app/js/models/TabItem.js:34
+msgid "TABITEM_STATUS_PAID"
+msgstr ""
+
+#: app/js/models/TabItem.js:35
+msgid "TABITEM_STATUS_SENTBACK"
+msgstr ""
+
+#: app/js/models/TabItem.js:33
+msgid "TABITEM_STATUS_SERVED"
+msgstr ""
+
+#: app/js/models/TabItem.js:36
+msgid "TABITEM_STATUS_SPILLED"
+msgstr ""

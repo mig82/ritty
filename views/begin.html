@@ -1,0 +1,41 @@
+
+<div ng-controller="BeginCtrl">
+	
+	<h5 translate>COMMON_START</h5>
+
+	<form ng-submit="gotoVenue()">
+		<fieldset>
+			
+			<div class="input-group">
+				<span class="input-group-addon" translate>COMMON_LOGIN_USERNAME</span>
+				<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="user" required>
+			</div>
+			<br>
+			<div class="input-group .select2-bootstrap-prepend">
+				<span class="input-group-addon" translate>Q_CHOOSE_VENUE</span>
+				<select id="venue" ng-model="venueIndex" required autofocus select2-init class="js-example-responsive" style="width: 50%">
+						<option ng-repeat="(index, venueOpt) in venues" value="{{index}}">{{venueOpt.name}}</option>	
+				</select>
+			</div>
+
+			
+			
+			<br>
+			<span translate>COMMON_CURRENT_VENUE_IS</span><b><i> {{venue.name}}</i></b>
+			<br>
+			<span translate>COMMON_WILL_SELECT_VENUE</span><b><i> {{venues[venueIndex].name}}</i></b>
+
+			<button type="submit" class="btn btn-default" translate translate-comment="Verb">BTN_GO</button>
+			
+		</fieldset>
+
+		<!--button type="button" ng-click="gotoSandBox()" class="btn btn-default">Go to sandbox</button-->
+	</form>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+

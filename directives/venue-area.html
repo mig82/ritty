@@ -1,0 +1,4 @@
+<svg class="area-blueprint" ng-attr-width="{{w}}" ng-attr-height="{{h}}">
+	<path fill="none" stroke="blue" stroke-width="1" ng-attr-d="{{drawing}}" />
+</svg>
+<div data-ng-repeat="(index, stroke) in strokes" class="svg-editing-node" data-index="{{$index}}" style="left: {{stroke.x-10}}px; top: {{stroke.y-10}}px;"></div>

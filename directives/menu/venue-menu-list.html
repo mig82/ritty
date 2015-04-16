@@ -1,0 +1,29 @@
+<div class="panel panel-primary" ng-controller="TillCtrl">
+	
+	<div class="panel-heading">
+		{{menu.title}}&nbsp;&nbsp;
+		<small>{{menu.description}}</small>
+	</div>
+	
+	<div class="navbar navbar-default panel-heading-navbar">
+		<div class="container-fluid">
+			<form class="navbar-form navbar-right">
+				<div class="input-group">
+					<span class="input-group-addon" translate>COMMON_FIND</span>
+					<input type="search" class="form-control input-sm" placeholder="{{PHOLD_SEARCH_MENU | translate}}" aria-describedby="basic-addon1" ng-model="q">
+					<span class="text-hide" translate>PHOLD_SEARCH_MENU</span>
+				</div>
+
+				<button type="button" class="btn btn-sm btn-default" data-template="popovers/specialOrder.html" data-animation="am-flip-x" data-auto-close="1" data-placement="left" bs-popover translate>BTN_SPEC_PREP</button>								
+
+				<button type="button" class="btn btn-sm btn-default" data-template="popovers/xNPopover.html" data-animation="am-flip-x" data-auto-close="1" data-placement="right" bs-popover>xN</button>
+			</form>
+		</div>
+	</div>
+	<div class="panel-body menu-body">
+		
+		<div class="panel-group" id="menu-accordion" role="tablist" aria-multiselectable="true">
+			<venue-submenu ng-repeat="(index, submenu) in menu.submenus" index="index" submenu="submenu" query="q" ></venue-submenu>
+		</div>
+	</div>
+</div>

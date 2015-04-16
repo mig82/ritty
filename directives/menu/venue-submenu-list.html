@@ -1,0 +1,24 @@
+
+<div class="panel panel-default" data-ng-controller="TillCtrl">
+	<div class="panel-heading" role="tab" id="menu-heading-{{index}}">
+		<h4 class="panel-title menu-item-heading">
+			<a class="collapsed" data-toggle="collapse" data-parent="#menu-accordion" data-target="#collapse-{{index}}" aria-expanded="true" aria-controls="collapse-1">
+				{{submenu.title}}
+			</a>
+		</h4>
+	</div>
+	<div id="collapse-{{index}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="menu-heading-1">
+		<ul class="list-group">
+			<li class="list-group-item menu-submenu-item" ng-repeat="item in submenu.items | filter:query as results">
+				<span class="text-primary">{{item.title}}</span>
+				<button type="button" class="btn btn-primary btn-xs menu-item-detail add-item-btn" ng-disabled="disableAddMenuItem" ng-click="addItemToTab(item)">+</button>
+				<span class="menu-item-detail">{{item.price | currency}}</span>
+				<span class="menu-item-detail" ng-if="item.minpax>1">
+					<small>
+						<em translate>COMMON_MINPAX</em>
+						<em>: {{item.minpax}}</em>
+					</small></span>
+			</li>
+		</ul>
+	</div>
+</div>

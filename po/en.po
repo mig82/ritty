@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: directives/menu/venue-menu.html:15
+msgid "BTN_CLEAR"
+msgstr "Clear"
+
+#: views/home.html:50
+msgid "BTN_EDIT_FLOOR"
+msgstr "Edit Area"
+
+#: views/home.html:49
+msgid "BTN_EDIT_TABLES"
+msgstr "Edit Tables"
+
+#: views/tab-payment.html:18
+msgid "BTN_EVEN_SPLIT_SUBTAB"
+msgstr "Split Even"
+
+#: views/tab-payment.html:17
+msgid "BTN_FULL_SUBTAB"
+msgstr "Pay All"
+
+#. Verb
+#: views/begin.html:28
+msgid "BTN_GO"
+msgstr "Go"
+
+#: views/tab-payment.html:19
+msgid "BTN_NEW_SUBTAB"
+msgstr "Pay Separately"
+
+#: directives/venue-tab.html:69
+msgid "BTN_OPEN"
+msgstr "Open"
+
+#: directives/venue-tab.html:13 views/home.html:47
+msgid "BTN_SERVE"
+msgstr "Serve"
+
+#: directives/menu/venue-menu-list.html:17 directives/menu/venue-menu.html:19
+msgid "BTN_SPEC_PREP"
+msgstr "Special"
+
+#: views/begin.html:24
+msgid "COMMON_CURRENT_VENUE_IS"
+msgstr "Current venue is"
+
+#. Verb
+#: directives/menu/venue-menu-list.html:12 directives/menu/venue-menu.html:12
+#: views/home.html:32
+msgid "COMMON_FIND"
+msgstr "Find"
+
+#: views/begin.html:10
+msgid "COMMON_LOGIN_USERNAME"
+msgstr "Who are you?"
+
+#: directives/menu/venue-submenu-list.html:18
+msgid "COMMON_MINPAX"
+msgstr "Min. pax"
+
+#: views/till.html:28
+msgid "COMMON_OPENED"
+msgstr "Opened"
+
+#: directives/venue-tab.html:61 views/till.html:20
+msgid "COMMON_PAX"
+msgstr "Pax"
+
+#: views/till.html:49
+msgid "COMMON_PAY"
+msgstr "Pay"
+
+#: views/begin.html:4
+msgid "COMMON_START"
+msgstr "Start"
+
+#: views/till.html:50
+msgid "COMMON_STATS"
+msgstr "Stats"
+
+#: views/till.html:32
+msgid "COMMON_STATUS"
+msgstr "Status"
+
+#: views/tab-payment.html:51
+msgid "COMMON_SUBTAB"
+msgstr "Partial Tab"
+
+#: directives/venue-tab.html:3 views/tab-payment.html:8 views/till.html:16
+#: views/till.html:48
+msgid "COMMON_TAB"
+msgstr "Tab"
+
+#: views/till.html:12
+msgid "COMMON_TABLE"
+msgstr "Table"
+
+#: directives/venue-tab.html:57 views/till.html:24
+msgid "COMMON_TAG"
+msgstr "Tag"
+
+#: views/till.html:4
+msgid "COMMON_TILL"
+msgstr "Cash Register"
+
+#: views/home.html:8
+msgid "COMMON_TOGGLE_NAV"
+msgstr "Navigation"
+
+#: views/begin.html:26
+msgid "COMMON_WILL_SELECT_VENUE"
+msgstr "You're selecting venue"
+
+#: views/home.html:62
+msgid "LANG_EN"
+msgstr "English"
+
+#: views/home.html:61
+msgid "LANG_ES"
+msgstr "Spanish"
+
+#: views/home.html:56
+msgid "MENU_LANG"
+msgstr "Language"
+
+#: views/home.html:42
+msgid "MENU_MODE"
+msgstr "Mode"
+
+#: directives/menu/venue-menu-list.html:14 directives/menu/venue-menu.html:13
+msgid "PHOLD_SEARCH_MENU"
+msgstr "Search menu"
+
+#: views/home.html:33
+msgid "PHOLD_SEARCH_TABLES"
+msgstr "Search tables"
+
+#: app/js/models/MenuItem.js:21
+msgid "PRICING_FIXED"
+msgstr "Fixed Price"
+
+#: app/js/models/MenuItem.js:22
+msgid "PRICING_MARKET"
+msgstr "Daily Market Price"
+
+#: views/begin.html:15
+msgid "Q_CHOOSE_VENUE"
+msgstr "What venue are we hosting today?"
+
+#: directives/venue-tab.html:49
+msgid "Q_OPEN_NEW_TAB"
+msgstr "Open a new tab on this table?"
+
+#: app/js/models/Tab.js:200
+msgid "TAB_STATUS_CLOSED"
+msgstr "Closed"
+
+#: app/js/models/Tab.js:193
+msgid "TAB_STATUS_NEW"
+msgstr "New"
+
+#: app/js/models/Tab.js:201
+msgid "TAB_STATUS_PROBLEM"
+msgstr "Problem"
+
+#: app/js/models/Tab.js:194
+msgid "TAB_STATUS_SERVING"
+msgstr "Serving"
+
+#: app/js/models/Tab.js:198
+msgid "TAB_STATUS_WAITCHECK"
+msgstr "Waiting for check"
+
+#: app/js/models/TabItem.js:31
+msgid "TABITEM_STATUS_NEW"
+msgstr "New"
+
+#: app/js/models/TabItem.js:32
+msgid "TABITEM_STATUS_ORDERED"
+msgstr "Ordered"
+
+#: app/js/models/TabItem.js:34
+msgid "TABITEM_STATUS_PAID"
+msgstr "Paid"
+
+#: app/js/models/TabItem.js:35
+msgid "TABITEM_STATUS_SENTBACK"
+msgstr "Sent back"
+
+#: app/js/models/TabItem.js:33
+msgid "TABITEM_STATUS_SERVED"
+msgstr "Served"
+
+#: app/js/models/TabItem.js:36
+msgid "TABITEM_STATUS_SPILLED"
+msgstr "Spilled"
+
+#~ msgid "BTN_EDIT_VENUE"
+#~ msgstr "Edit Venue"
+
+#~ msgid "MENU_OPTIONS"
+#~ msgstr "Options"
+
+#~ msgid "COMMON_CURRENT_VENUE_IS<b><i>{{venue.name}}</i></b>"
+#~ msgstr "Selected venue is <b><i>{{venue.name}}</i></b>"
+
+#~ msgid "COMMON_MINPAX: {{item.minpax}}"
+#~ msgstr "Min. pax: {{item.minpax}}"
+
+#~ msgid "COMMON_WILL_SELECT_VENUE<b><i>{{venues[venueIndex].name}}</i></b>"
+#~ msgstr "You're selecting venue <b><i>{{venues[venueIndex].name}}</i></b>"
+
+#~ msgid "MENU_LANG<span class=\"caret\"></span>"
+#~ msgstr "Language"
+
+#~ msgid "MENU_OPTIONS<span class=\"caret\"></span>"
+#~ msgstr "Options"
+
+#~ msgid "COMMON_OPENED: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</i>"
+#~ msgstr "Opened: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</i>"
+
+#~ msgid "COMMON_CHOOSE_VENUE"
+#~ msgstr "What venue are hosting today?"

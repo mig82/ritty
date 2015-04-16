@@ -1,0 +1,31 @@
+<div id="xNCalculator" class="popover">
+	<div class="arrow"></div>
+	<h3 class="popover-title" >Add next item <em>N</em> times</h3>
+	
+	<div class="popover-content xn-calc">
+		<span  ng-bind="content"></span>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div ng-class="calcScreenClass" role="alert"><span class="" ng-if="digits!=''">x{{digits}}</span></div>
+			</div>
+			<div class="row">
+				<button class="btn btn-md btn-default calc-button col-xs-4" ng-repeat="digit in [1,2,3]" ng-click="enterDigit(digit)">{{digit}}</button>
+			</div>
+			<div class="row">
+				<button class="btn btn-md btn-default calc-button col-xs-4" ng-repeat="digit in [4,5,6]" ng-click="enterDigit(digit)">{{digit}}</button>
+			</div>
+			<div class="row">
+				<button class="btn btn-md btn-default calc-button col-xs-4" ng-repeat="digit in [7,8,9]" ng-click="enterDigit(digit)">{{digit}}</button>
+			</div>
+
+			<div class="row">
+				
+					<button class="btn btn-md btn-default calc-button col-xs-4" ng-click="deleteDigit()">&lt;</button>
+					<button class="btn btn-md btn-default calc-button col-xs-4" ng-click="enterDigit(0)">0</button>
+					<button class="btn btn-md btn-default calc-button col-xs-4" ng-click="nextItemXN(1)">C</button>
+
+			</div>
+		</div>
+	</div>
+</div>

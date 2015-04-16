@@ -1,0 +1,1 @@
+sass --watch scss/ritty.scss:css/ritty.css

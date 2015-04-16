@@ -1,0 +1,45 @@
+{
+  "name": "ritty",
+  "version": "1.0.0",
+  "description": "A cash register application for restaurants and bars.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguelangel Fernandez",
+  "license": "no license",
+  "keywords": [
+    "ritty",
+    "ritti",
+    "rytty",
+    "rytti",
+    "rity",
+    "ryty",
+    "ryti",
+    "ryty",
+    "cash",
+    "register",
+    "cash register",
+    "caja",
+    "registradora",
+    "till",
+    "venue",
+    "food",
+    "beverage",
+    "restaurant",
+    "bar",
+    "cocktail",
+    "pub",
+    "tab",
+    "comanda",
+    "comandas",
+    "billing",
+    "facturacion",
+    "sme",
+    "pyme"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-gettext": "^2.0.1"
+  }
+}

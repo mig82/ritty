@@ -1,0 +1,37 @@
+
+<div class="panel container-fluid" data-ng-controller="TillCtrl">
+
+	<!--If the children of the submenu are other submenus-->
+	<!--TODO: Make the submenu directive recursive-->
+
+
+	<!--If the children of the submenu are items-->
+	<div class="row" ng-if="submenu.items">
+		
+		<div ng-repeat="item in submenu.items | filter:query as results">
+			
+			<button 	class="btn btn-default btn-sm col-xs-2 menu-submenu-item"
+						type="button"
+						ng-disabled="disableAddMenuItem"
+						ng-click="addItemToTab(item)"
+						ng-if="item.isFixedPriced()">
+				<span>{{item.title}}</span>
+			</button>
+
+			<button 	type="button"
+						class="btn btn-default btn-sm col-xs-2 menu-submenu-item"
+						data-template="popovers/specialPricing.html"
+						data-animation="am-flip-x"
+						data-auto-close="1"
+						data-placement="right"
+						data-content="{{item.title}}: {{item.pricing | translate}}"
+						bs-popover
+						ng-disabled="disableAddMenuItem" 
+						ng-if="!item.isFixedPriced()">
+				<span>{{item.title}}</span>
+			</button>
+
+		</div>
+		
+	</div>
+</div>

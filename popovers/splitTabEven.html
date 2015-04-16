@@ -1,0 +1,18 @@
+<div class="popover container-fluid">
+	<div class="arrow"></div>
+	<h3 class="popover-title" translate>COMMON_SPLIT_EVEN</h3>
+	
+	<div class="popover-content">
+		<span  ng-bind="content"></span>
+		<form>
+			<!--input type="number" class="form-control input-sm" aria-describedby="basic-addon1" ng-model="partyCount" min="{{tab.subTabs?tab.subTabs.length:1}}" integer-->
+			<pre>{{partyCount}}</pre>	
+			<button class="btn btn-default btn-sm" data-ng-click="increaseNumOfSubtabs()"><span class="glyphicon glyphicon-chevron-up"   ></span></button>
+			<button class="btn btn-default btn-sm" data-ng-click="decreaseNumOfSubtabs()"><span class="glyphicon glyphicon-chevron-down" ></span></button>
+			<button class="btn btn-primary btn-sm" data-ng-click="splitEven()"><span translate>BTN_EVEN_SPLIT_SUBTAB</span></button>
+		</form>
+	</div>
+
+
+	
+</div>

@@ -1,0 +1,291 @@
+/*$table-fill-color: #E2BA6A;*/
+/*$table-stroke-color: #BB866A;*/
+body {
+  	/*color: white;
+   	background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  		linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  		linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  		linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  		linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  	background-color: #131313;
+  	background-size: 20px 20px;*/ }
+
+div.canvas-view {
+  width: inherit;
+  height: 400px;
+  overflow: scroll; }
+
+div.canvas {
+  width: 1000px;
+  height: 800px;
+  position: relative;
+  border: 1px solid gray;
+  background-color: #CCCCFF; }
+
+div.layer {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  top: 0px;
+  left: 0px; }
+
+div.layer-blueprint {
+  border: 1px solid blue; }
+
+div.layer-furniture {
+  border: 1px solid orange; }
+
+div.layer-editing {
+  background-color: rgba(250, 250, 250, 0.7); }
+
+div.layer-top {
+  z-index: 20;
+  /*opacity: 0.5;*/ }
+
+div.layer-bottom {
+  z-index: 10;
+  /*opacity: 1.0;*/ }
+
+ellipse.svg-background-table,
+rect.svg-background-table {
+  fill: #CEA8F0;
+  stroke: #4C335A; }
+
+.svg-editing-node {
+  position: absolute;
+  background-color: rgba(200, 200, 200, 0.75);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid gray;
+  /*display: none;*/ }
+
+div.table {
+  position: absolute !important;
+  margin: 0px;
+  /*background-color: lightseagreen;*/
+  color: white;
+  border: none;
+  background: none;
+  border-radius: 5px;
+  padding: 50x;
+  font-size: 10px;
+  height: 50px;
+  width: 50px;
+  z-index: -30;
+  /*border: solid 1px blue;*/ }
+
+div.table svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: none;
+  height: inherit;
+  width: inherit;
+  z-index: -20;
+  /*border: 1px solid red;*/ }
+
+div.table-ui-control {
+  white-space: nowrap;
+  display: none; }
+
+div.table-ui-control-top {
+  position: absolute;
+  top: -40px; }
+
+div.table-ui-control-bottom {
+  position: absolute;
+  bottom: -55px; }
+
+div.table .table-drag-handle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: move; }
+
+div.table .table-rotate-clock-handle {
+  /*position: absolute;
+  bottom: 1px;
+  left: 0px;*/
+  cursor: pointer; }
+
+div.table .table-rotate-counterclock-handle {
+  /*position: absolute;
+  bottom: 1px;
+  left: -20px;*/
+  cursor: pointer;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); }
+
+div.table .table-shape-switch-handle {
+  /*position: absolute;
+  top: 0px;
+  right: 0px;*/
+  cursor: pointer; }
+
+div.table .table-actions-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer; }
+
+div.table .ui-icon {
+  border-radius: 3px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc; }
+
+div.ui-icon-gripsmall-diagonal-se {
+  background-position: -80px -224px;
+  right: -20px;
+  bottom: -20px; }
+
+div.ui-tool-bar {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+svg.area-blueprint {
+  height: inherit;
+  width: inherit; }
+
+/*
+	div.table-srv-control{
+		display: block;
+	}*/
+/*div.ui-rotatable-handle {
+	@extend .ui-icon;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    background-image: url("../../vendor/jquery-ui/images/ui-icons_9ccdfc_256x240.png");
+    background-position: -128px -64px;
+    background-repeat: no-repeat;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+}*/
+div.till-panel {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+div.menu-panel {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50%; }
+
+div.tabs-panel {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50%; }
+
+div.menu-body {
+  padding: 5px;
+  max-height: 450px;
+  overflow-y: scroll;
+  color: black; }
+
+li.menu-submenu-item {
+  padding: 5px;
+  font-size: 1.2rem !important;
+  line-height: 2rem; }
+
+li.tab-item {
+  padding: 5px;
+  font-size: 1.1rem !important;
+  line-height: 1.5rem; }
+
+ul.connected-tab-list {
+  background-color: #DDD;
+  min-height: 2rem; }
+
+button.menu-submenu-item {
+  padding: 2px !important;
+  white-space: normal;
+  line-height: 1em;
+  margin: 2px;
+  min-height: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  max-width: 9.8rem; }
+
+.menu-item-detail {
+  float: right;
+  margin-left: 1rem; }
+
+h4.menu-item-heading {
+  font-size: 12px; }
+
+.panel-heading-navbar {
+  margin-bottom: 0px; }
+
+.till-tab-panel {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0px 0px 9px 9px;
+  padding: 0.8rem;
+  background: #fafafa; }
+
+.till-column {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.xn-calc {
+  min-width: 15rem; }
+
+button.calc-button {
+  width: 30px;
+  font-size: 1.2rem;
+  margin: 0.3rem; }
+
+.calc-screen {
+  padding: 5px 15px;
+  line-height: 1.5em;
+  margin-bottom: 5px;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+  min-height: 30px; }
+
+.table-info {
+  position: relative;
+  top: -15px;
+  overflow: visible; }
+  .table-info span {
+    white-space: nowrap;
+    color: #646464;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    border-radius: 5px;
+    padding-right: 5px;
+    padding-left: 5px; }
+
+.menu-column {
+  padding-right: 0rem; }
+
+.tab-column {
+  padding-left: 0.5rem; }
+
+.remove-left-right-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+
+.subtabs-viewport {
+  max-height: 400px;
+  overflow-x: scroll; }
+
+/*Overrides Bootstrap definition to reduce the padding.*/
+.modal-body {
+  position: relative;
+  padding: 5px; }
+
+@media (min-width: 1024px) {
+  .modal-xl {
+    width: 1000px; } }
+
+/*# sourceMappingURL=ritty.css.map */

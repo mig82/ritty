@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-ng-app="ritty" data-ng-csp>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <!--script src="bower_components/modernizr/modernizr.js"></script-->
+
+	<link href="vendor/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+	<!--link href="vendor/bootstrap/css/bootstrap-modal-bs3patch.css" rel="stylesheet" -->
+	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" >
+	<link href="vendor/select2/select2.css" rel="stylesheet">
+	<link href="vendor/select2/select2-bootstrap3.css" rel="stylesheet">
+
+	<!--link href="bower_components/foundation/css/normalize.css" rel="stylesheet">
+	<link href="bower_components/foundation/css/foundation.css" rel="stylesheet"-->
+
+	<link rel="stylesheet" href="app/css/ritty.css">
+	
+	<title>Ritty</title>
+	
+</head>
+	<body>
+		<div class="container-fluid">
+			<!--h4>Ritty<small>v0.1</small></h4-->
+			<div id="view1" ng-view></div>
+		</div>
+	</body>
+
+	<script src="vendor/mozilla/math-decimal-rounding.js"></script>
+
+	<!--jQuery and jQuery related-->
+	<script src="vendor/jquery/jquery.js"></script>
+	<script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+	<!--script src="vendor/jquery-ui-rotatable/jquery.ui.rotatable.js"></script-->
+	<script src="vendor/jquery-ui-touchpunch/jquery.ui.touch-punch.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+
+	<script src="vendor/angular/angular.js"></script>
+	<script src="vendor/angular/angular-touch.js"></script>
+	<script src="vendor/angular/angular-route.js"></script>
+	
+	<script src="vendor/angular-indexed-db/angular-indexed-db.js"></script>
+	<script src="vendor/angular-strap/angular-strap.min.js"></script>
+	<script src="vendor/angular-strap/angular-strap.tpl.min.js"></script>
+	<script src="vendor/angular-ui/sortable.js"></script>
+
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="vendor/Q/q.js"></script>
+
+	<script src="app/js/app3.js"></script>
+	<script src="app/js/directives/select2Init.js"></script>
+	<script src="app/js/directives/menu/menu.js"></script>
+	<script src="app/js/directives/venue/venueTable.js"></script>
+	<script src="app/js/directives/tabs/venueTab.js"></script>
+	<script src="app/js/directives/venue/venueArea.js"></script>
+	<script src="app/js/directives/integer.js"></script>
+	<!--script src="app/js/directives/bsPopover.js"></script-->
+	<!--script src="app/js/services/indexedDBService.js"></script-->
+	
+	<script src="app/js/services/RittyStorage.js"></script>
+	<script src="app/js/services/RittyConfig.js"></script>
+	<script src="app/js/services/RittyService.js"></script>
+	<script src="app/js/services/UsbService.js"></script>
+	<script src="app/js/services/TabSequencerService.js"></script>
+
+	<script src="app/js/controllers/BeginCtrl.js"></script>
+	<script src="app/js/controllers/HomeCtrl.js"></script>
+	<script src="app/js/controllers/TillCtrl.js"></script>
+	<script src="app/js/controllers/PayCtrl.js"></script>
+
+	<script src="app/js/models/Table.js"></script>
+	<script src="app/js/models/Tab.js"></script>
+	<script src="app/js/models/TabItem.js"></script>
+	<script src="app/js/models/Menu.js"></script>
+	<script src="app/js/models/MenuItem.js"></script>
+	
+	<script src="app/js/filters/TruncateFilter.js"></script>
+	<script src="app/js/filters/TabIdFilter.js"></script>
+	
+	<script src="app/js/translations.js" charset="UTF-8"></script>
+	<script src="bower_components/angular-gettext/dist/angular-gettext.min.js"></script>
+
+	<script src="vendor/moment/moment.js"></script>
+
+</html>

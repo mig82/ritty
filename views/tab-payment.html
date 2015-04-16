@@ -1,0 +1,79 @@
+<div class="container-fluid" data-ng-controller="PayCtrl">
+	<div class="row">
+		<div class="col-xs-6">
+			
+			<div class="panel panel-primary">
+
+				<div class="panel-heading">
+					<span translate>COMMON_TAB</span>
+					<span class="pull-right">{{tab.total | currency}}</span>
+					
+				</div>
+
+				<!--Tab controls. Show only if the table has an open tab-->
+				<div class="navbar navbar-default panel-heading-navbar" ng-if="tab">
+					<div class="container-fluid">
+						<form class="navbar-form navbar-right">
+							<button type="button" class="btn btn-sm btn-default" translate>BTN_FULL_SUBTAB</button>
+							<button type="button" class="btn btn-sm btn-default"
+									data-template="popovers/splitTabEven.html"
+									data-animation="am-flip-x"
+									data-auto-close="1"
+									data-placement="right"
+									bs-popover
+									translate>BTN_EVEN_SPLIT_SUBTAB</button>
+							<button type="button" class="btn btn-sm btn-default" ng-click="createSubTab()" translate>BTN_NEW_SUBTAB</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="panel-body menu-body">
+
+						<!--Already ordered items list. Show only if the table has an open tab-->
+						<ul id="{{tab.id}}" class="pay-tab list-group connected-tab-list" ng-if="tab" ui-sortable="sortableOptions" ng-model="tab.tabItems">
+							<li id="{{item.id}}"
+								class="list-group-item tab-item"
+								ng-repeat="item in tab.tabItems track by $index">
+								<span>x{{item.xn}}</span>
+								<span>{{item.title | truncate:40}}</span>
+
+								<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>
+								<span class="menu-item-detail">{{item.updated  | date: "hh:mm a"}}</span>
+								<span class="menu-item-detail">{{item.pricexn | currency}}</span>
+								<span class="menu-item-detail">{{item.price | currency}}</span>
+							</li>
+						</ul>
+
+					</div>
+
+			</div>
+
+		</div>
+		<div class="col-xs-6 subtabs-viewport">
+
+			<div class="panel panel-primary" ng-repeat="subtab in tab.subTabs track by $index">
+
+				<div class="panel-heading">
+					<span translate>COMMON_SUBTAB</span>
+					<span>{{subtab.id | tabId}}</span>
+					<span class="pull-right">{{subtab.total | currency}}</span>
+				</div>
+
+				<ul id="{{subtab.id}}" class="pay-tab list-group connected-tab-list" ui-sortable="sortableOptions" ng-model="subtab.tabItems">
+					<li id="{{item.id}}"
+						class="list-group-item tab-item"
+						ng-repeat="item in subtab.tabItems track by $index">
+						<span>x{{item.xn}}</span>
+						<span>{{item.title | truncate:40}}</span>
+
+						<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>
+						<span class="menu-item-detail">{{item.updated  | date: "hh:mm a"}}</span>
+						<span class="menu-item-detail">{{item.pricexn | currency}}</span>
+						<span class="menu-item-detail">{{item.price | currency}}</span>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</div>

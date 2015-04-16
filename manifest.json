@@ -1,0 +1,36 @@
+﻿{
+
+	"manifest_version":	2,
+	"name":	"Ritty",
+	"version":	"0.0.1",
+
+	"short_name":	"Ritty",
+	"description":	"",
+
+	"icons":	{
+		"16":	"icon_16.png",
+		"128":	"icon_128.png"
+	},
+
+	"permissions": [
+		"storage",
+		"usb",
+		"hid",
+		{
+			"usbDevices": [
+				{"vendorId": 6127, "productId": 24590},
+				{"vendorId": 1057, "productId": 1633},
+				{"vendorId": 4046, "productId": 431}
+			]
+		}
+	],
+
+	"app":	{
+
+		"background":	{
+			"scripts":	["background.js"]
+		}
+	},
+
+	"minimum_chrome_version":	"28"
+}

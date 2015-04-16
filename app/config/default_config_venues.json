@@ -1,0 +1,14 @@
+{
+	"venues": [
+		{
+			"id": "v1",
+			"name": "Cocktail Bar",
+			"description": "A template for a cocktail bar."
+		},
+		{
+			"id": "v2",
+			"name": "My Restaurant",
+			"description": "A template for a restaurant."
+		}
+	]
+}

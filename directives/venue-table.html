@@ -1,0 +1,28 @@
+<div 	id="t{{table.id}}"
+		title="table {{table.table_id}}: '{{table.tag}}'"
+		class="table ui-state-default"
+		style="left: {{x}}px; top: {{y}}px; height: {{h}}px; width: {{w}}px;"> 
+	
+	<!--div class="table-ui-control table-drag-handle ui-icon ui-icon-arrow-4"></div-->
+	<div class="table-ui-control" ng-class="uiControlsLocation">
+		<button class="btn btn-default glyphicon glyphicon-repeat table-rotate-clock-handle"></button>
+		<button class="btn btn-default glyphicon glyphicon-repeat table-rotate-counterclock-handle"></button>
+		<button class="btn btn-default glyphicon glyphicon-picture table-shape-switch-handle"></button>
+	</div>
+	<!--div class="table-srv-control table-actions-button ui-icon ui-icon-newwin" ng-click="selectTable()"></div-->
+
+	<div class="table-info" style="min-width:{{infoMinWidth}}ch;">
+		<span>
+			{{table.table_id}}
+			<em ng-if="table.tab && table.tab.tag">: &#8220;{{table.tab.tag}}&#8221;</em>
+		</span>
+	</div>
+	
+	<svg 	data-ng-click="selectTable()"
+			style="transform: rotate({{rotation}}rad); -webkit-transform: rotate({{rotation}}rad);">
+		<ellipse ng-if="shape=='ellipse'"	ng-attr-cx="{{w/2}}" ng-attr-cy="{{h/2}}" ng-attr-rx="{{w/2}}" ng-attr-ry="{{h/2}}"	class="svg-background-table" />
+		<rect	 ng-if="shape=='rect'" 		x="0" y="0"	ng-attr-width="{{w}}" ng-attr-height="{{h}}"  class="svg-background-table" />
+		<text 	 ng-if="shape!='ellipse' && shape!='rect'" x="10" y="10" fill="red">Unknown shape</text>
+	</svg>
+
+</div>
