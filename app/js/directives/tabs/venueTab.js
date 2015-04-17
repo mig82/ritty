@@ -43,8 +43,8 @@ angular.module('ritty').directive('venueTab', ['RittyService', function(RittySer
 
 			//Send the newly added tab items to the kitchen for preparation.
 			$scope.serve = function(){
-				console.log("Sending these new items for prep");
 				RittyService.sendForPrep();
+				window.scope = $scope;
 			};
 
 			//Called from the tab when the user clicks the '-' button on a tab item.

@@ -51,30 +51,31 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		this._addToTabTotals(tabItem, 1);
 	};
 
-	Tab.prototype.removeTabItem = function(tabItem){
+	Tab.prototype.removeNewItem = function(tabItem)
+	{
 		if(tabItem.xn > 1)
 		{
 			tabItem.setXN(tabItem.xn-1);
 		}
 		else if (tabItem.xn == 1)
 		{
-			if(tabItem.status.id == TabItem.STATUS_NEW.id){
-				this.newItems.splice(this.newItems.indexOf(tabItem), 1);
-			}
-			else{
-				this.tabItems.splice(this.tabItems.indexOf(tabItem), 1);
-			}
-			
+			this.newItems.splice(this.newItems.indexOf(tabItem), 1);
 		}
 
 		this._subtractFromTabTotals(tabItem);
 	};
 
-	Tab.prototype._addToTabTotals = function(tabItem, xn){
+	Tab.prototype.popTabItem = function()
+	{
+		var tabItem = this.tabItems.pop();
+		this._subtractFromTabTotals(tabItem, true);
+		return tabItem;
+	};
 
+	Tab.prototype._addToTabTotals = function(tabItem, xn)
+	{
 		if(xn)
 		{
-
 			if(tabItem.status == TabItem.STATUS_NEW){
 				this.newItemsTotal += xn * tabItem.price;
 			}
@@ -95,12 +96,20 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		}
 	};
 
-	Tab.prototype._subtractFromTabTotals = function(tabItem){
+	Tab.prototype._subtractFromTabTotals = function(tabItem, removeAll){
 		
-		if(tabItem.status == TabItem.STATUS_NEW){
+		if(tabItem.status == TabItem.STATUS_NEW)
+		{
+			if(removeAll)
+			this.newItemsTotal -= tabItem.pricexn;
+			else
 			this.newItemsTotal -= tabItem.price;
 		}
-		else{
+		else
+		{	
+			if(removeAll)
+			this.total -= tabItem.pricexn;
+			else
 			this.total -= tabItem.price;
 			//this.vat -= tabItem.vat;
 		}
@@ -125,8 +134,11 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 
 	Tab.prototype.createSubTab = function(){
 		if(!this.subTabs)
-		this.subTabs = new Array();
-
+		{
+			//Keep a backup of the original items in the tab so the split can be undone.
+			this._backupTabItems();
+			this.subTabs = new Array();
+		}
 		this.subTabs.push(   new Tab(this.id, this.id.concat(".", this.subTabSeq++))   );
 	};
 
@@ -155,26 +167,51 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 	};
 
 	Tab.prototype.splitEven = function(){
-		this.backup = {
-			tabItems: angular.copy(this.tabItems)
-		};
+		
+		//Keep a backup of the original items in the tab so the split can be undone.
+		this._backupTabItems();
 
-		var tabItemsCount = this.tabItems.length;
-		var subTabsCount = this.subTabs.length;
+		var m = this.tabItems.length;
+		var t = this.subTabs.length;
 
-		for (var i = 0; i < tabItemsCount; i++) {
+		//for each of the m items in the tab...	
+		for (var i = m-1; i >= 0; i--) {
 
-			var fraction = "".concat(this.tabItems[i].xn, "/", subTabsCount);
-			var xn = Math.round10(this.tabItems[i].pricexn / subTabsCount, -2);
+			var item = this.popTabItem();
+			//var gcd = Math.gcd(item.xn, t)
+
+			var num = item.xn; //item.xn / gcd;
+			var den = t; //t / gcd;
 			
-			this.tabItems[i].newXN = xn;
-			this.tabItems[i].fraction = fraction;
+			item.fraction = "".concat(num, "/", den);
+			item.setXN(num / den);
 
-			console.log("TabItem %o", this.tabItems[i]);
-
-			//For over subTabs and add a clone of tabItems[i] to each.
+			for (var j = t-1; j >= 0; j--) {
+				this.subTabs[j].addTabItem(angular.copy(item));
+			};
 
 		};
+	};
+
+	Tab.prototype._backupTabItems = function(){
+		if(!this.backup){
+			this.backup = {};
+		}
+
+		if(!this.backup.tabItems){
+			this.backup.tabItems = angular.copy(this.tabItems)
+		}
+		console.log("Backed up %o", this);
+	};
+
+	Tab.prototype.cancelSubTabs = function(){
+		if(this.backup && this.backup.tabItems){
+			this.tabItems = this.backup.tabItems;
+			delete this.backup.tabItems;
+		}
+		this.subTabs = new Array();
+		this.syncTotals();
+		console.log("Cancelled %o", this);
 	};
 
 	var STATUS_NEW				= {id: 00, desc: gettext('TAB_STATUS_NEW')};

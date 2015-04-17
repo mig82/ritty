@@ -23,6 +23,7 @@
 									bs-popover
 									translate>BTN_EVEN_SPLIT_SUBTAB</button>
 							<button type="button" class="btn btn-sm btn-default" ng-click="createSubTab()" translate>BTN_NEW_SUBTAB</button>
+							<button type="button" class="btn btn-sm btn-default" ng-click="cancelSubTabs()" translate>BTN_CANCEL</button>
 						</form>
 					</div>
 				</div>
@@ -64,6 +65,7 @@
 						class="list-group-item tab-item"
 						ng-repeat="item in subtab.tabItems track by $index">
 						<span>x{{item.xn}}</span>
+						<span ng-if="item.fraction">(x{{item.fraction}})</span>
 						<span>{{item.title | truncate:40}}</span>
 
 						<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>

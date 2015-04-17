@@ -23,9 +23,9 @@ angular.module('ritty').factory('TabItem', ['gettext', 'TabSequencerService', fu
 	}
 
 	TabItem.prototype.setXN = function(xn){
-		this.xn = xn;
 		this.pricexn = Math.round10(xn * this.price, -2);
-		this.vatxn = Math.round10(xn * this.vat, -2);
+		this.vatxn =   Math.round10(xn * this.vat, -2);
+		this.xn = Math.round10(xn, -2);
 	};
 
 	var STATUS_NEW		= {id: 00, desc: gettext('TABITEM_STATUS_NEW')};

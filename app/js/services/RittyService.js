@@ -55,6 +55,11 @@ angular.module('ritty').factory('RittyService', ['RittyStorage', 'Tab','TabItem'
 			return _table;
 		},
 
+		getSelectedTab: function(){
+			if(_table) return _table.tab;
+			else return null;
+		},
+
 		selectedTableHasTab: function(){
 			return _table && _table.tab && _table.tab.newItems;
 		},
@@ -83,7 +88,7 @@ angular.module('ritty').factory('RittyService', ['RittyStorage', 'Tab','TabItem'
 
 		//Removes x1 of a TabItem from the tab on the selected table.
 		removeItemFromTab: function(tabItem){
-			_table.tab.removeTabItem(tabItem);
+			_table.tab.removeNewItem(tabItem);
 			RittyStorage.updateTable(_table);
 		},
 
