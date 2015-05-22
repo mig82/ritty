@@ -93,7 +93,7 @@ angular.module('ritty').factory('RittyService', ['RittyStorage', 'Tab','TabItem'
 		},
 
 		addAnotherToTab: function(tabItem){
-			_table.tab.addAnotherTabItem(tabItem);
+			_table.tab.addAnotherNewItem(tabItem);
 			RittyStorage.updateTable(_table);
 		},
 

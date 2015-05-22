@@ -97,7 +97,11 @@ angular.module('ritty').factory('RittyStorage', ['$indexedDB', 'Table', 'Menu', 
 
 	var _getVenues = function()
 	{
-		return _getStoreItems(_storeNames.VENUES_STORE);
+		return _getStoreItems(_storeNames.VENUES_STORE)
+		.then(function (venueObjs) {
+			var venues = Venue.fromObjArray(venueObjs);
+			return venues;
+		});
 	};
 
 	var _getTables = function(venueId)

@@ -5,7 +5,9 @@
 */
 angular.module('ritty').factory('Menu', ['gettext', 'MenuItem', function(gettext, MenuItem){
 
-	function Menu(venue_id , menu_id, title, description){
+	"use strict";
+	
+	function Menu(venue_id , menu_id, title, desc){
 		
 		if(venue_id && menu_id)
 		{
@@ -15,7 +17,7 @@ angular.module('ritty').factory('Menu', ['gettext', 'MenuItem', function(gettext
 		}
 
 		this.title = title;
-		this.description = description;
+		this.desc = desc;
 		this.submenus = new Array();
 		this.items = new Array();
 
@@ -27,7 +29,7 @@ angular.module('ritty').factory('Menu', ['gettext', 'MenuItem', function(gettext
 			obj.venue_id,
 			obj.menu_id,
 			obj.title,
-			obj.description
+			obj.desc
 		);
 
 		if(obj.submenus)

@@ -1,81 +1,84 @@
 <div data-ng-controller="TillCtrl">
-	<div>
-		<button type="button" class="close" ng-click="gotoHome()">&times;</span></button>
-		<h5 class="modal-title" id="myModalLabel"><strong translate>COMMON_TILL</strong></h5>
+	<br/>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><span><strong translate>COMMON_TILL</strong></span></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a type="button" class="close" ng-click="gotoHome()">&times;</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_TABLE</span>
+				<span class="text-info"> {{selectedTable.table_id}}</span>
+			</div>
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_TAB</span>
+				<span class="text-info" ng-if="selectedTable.tab"> {{selectedTable.tab.id | tabId}}</span>
+			</div>
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_PAX</span>
+				<span class="text-info"> x{{selectedTable.tab.pax}}</span>
+			</div>
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_TAG</span>
+				<i>{{selectedTable.tab.tag}}</i>
+			</div>
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_OPENED</span>
+				<span class="text-info"> {{selectedTable.tab.openingTime | date: "hh:mm a"}}</span>
+			</div>
+			<div class="col-xs-2">
+				<span class="text-primary" translate>COMMON_STATUS</span>
+				<span class="text-info">
+					{{selectedTable.tab.status.desc | translate}}&nbsp;&nbsp;
+					{{selectedTable.tab.openingTime | date: "mm 'min'"}}
+				</span>
+			</div>
+			
+		</div>
 	</div>
-	<div class="modal-body">
-			
-			
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_TABLE</span>
-							<span class="text-info"> {{selectedTable.table_id}}</span>
-						</div>
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_TAB</span>
-							<span class="text-info" ng-if="selectedTable.tab"> {{selectedTable.tab.id | tabId}}</span>
-						</div>
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_PAX</span>
-							<span class="text-info"> x{{selectedTable.tab.pax}}</span>
-						</div>
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_TAG</span>
-							<i>{{selectedTable.tab.tag}}</i>
-						</div>
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_OPENED</span>
-							<span class="text-info"> {{selectedTable.tab.openingTime | date: "hh:mm a"}}</span>
-						</div>
-						<div class="col-xs-2">
-							<span class="text-primary" translate>COMMON_STATUS</span>
-							<span class="text-info">
-								{{selectedTable.tab.status.desc | translate}}&nbsp;&nbsp;
-								{{selectedTable.tab.openingTime | date: "mm 'min'"}}
-							</span>
-						</div>
-						
+	<hr>
+
+	<div role="tabpanel">
+
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active">	<a data-target="#content-1" aria-controls="#content-1" role="tab" data-toggle="tab" translate>COMMON_TAB</a></li>
+			<li role="presentation">				<a data-target="#content-2" aria-controls="#content-2" role="tab" data-toggle="tab" translate>COMMON_PAY</a></li>
+			<li role="presentation">				<a data-target="#content-3" aria-controls="#content-3" role="tab" data-toggle="tab" translate>COMMON_STATS</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content till-tab-panel">
+			<div role="tabpanel" class="tab-pane fade in active" id="content-1">
+				
+				<div class="row">
+					<div class="col-xs-8 menu-column">
+						<venue-menu menu="menu"></venue-menu>
+					</div>
+
+					<div class="col-xs-4 tab-column">
+						<venue-tab tab="selectedTable.tab"></venue-tab>
 					</div>
 				</div>
 				
-				<hr>
-
-				<div role="tabpanel">
-
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active">	<a data-target="#content-1" aria-controls="#content-1" role="tab" data-toggle="tab" translate>COMMON_TAB</a></li>
-						<li role="presentation">				<a data-target="#content-2" aria-controls="#content-2" role="tab" data-toggle="tab" translate>COMMON_PAY</a></li>
-						<li role="presentation">				<a data-target="#content-3" aria-controls="#content-3" role="tab" data-toggle="tab" translate>COMMON_STATS</a></li>
-					</ul>
-
-					<!-- Tab panes -->
-					<div class="tab-content till-tab-panel">
-						<div role="tabpanel" class="tab-pane fade in active" id="content-1">
-							
-							<div class="row">
-								<div class="col-xs-8 menu-column">
-									<venue-menu menu="menu"></venue-menu>
-								</div>
-
-								<div class="col-xs-4 tab-column">
-									<venue-tab tab="selectedTable.tab"></venue-tab>
-								</div>
-							</div>
-							
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="content-2" ng-include="'views/tab-payment.html'" onload="">
-							<!--tab-payment tab="selectedTable.tab"></tab-payment-->
-
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="content-3">These are the stats</div>
-					</div>
-				</div>
-				
-
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="content-2" ng-include="'views/tab-payment.html'" onload="">
+				<!--tab-payment tab="selectedTable.tab"></tab-payment-->
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="content-3">These are the stats</div>
+		</div>
 	</div>
-	<div class="modal-footer">
-		
-	</div>
+	
 </div>

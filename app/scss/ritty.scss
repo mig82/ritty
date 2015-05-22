@@ -1,10 +1,8 @@
  
-/*$table-fill-color: #E2BA6A;*/
-$table-fill-color: #CEA8F0;
-/*$table-stroke-color: #BB866A;*/
-$table-stroke-color: #4C335A;
+@import 'venue_map';
+
 $panel-border-color: #ddd;
-$editing-layer-background: rgba(250,250,250,0.7);
+
 
 body{
 
@@ -18,186 +16,6 @@ body{
 	background-color: #131313;
 	background-size: 20px 20px;*/
 }
-
- 	div.canvas-view{
- 		width: inherit;
- 		height: 400px;
- 		overflow: scroll;
- 	}
-
- 	div.canvas { 
-	  width: 1000px;
-	  height: 800px;
-	  position: relative;
-	  border: 1px solid gray;
-	  background-color: #CCCCFF;
-	}
-
-	div.layer{
-	  position: absolute;
-	  height: inherit;
-	  width: inherit;
-	  top: 0px;
-	  left: 0px;
-	}
-
-	div.layer-blueprint{
-	 	border: 1px solid blue;
-	}
-
-	div.layer-furniture{
-	 	border: 1px solid orange;
-	}
-
-	div.layer-editing{
-		background-color: $editing-layer-background;
-	}
-
-	div.layer-top{
-	  z-index: 20;
-	  /*opacity: 0.5;*/
-	}
-
-	div.layer-bottom{
-	  z-index: 10;
-	  /*opacity: 1.0;*/
-	}
-
-	ellipse.svg-background-table,
-	rect.svg-background-table{
-		fill: $table-fill-color;
-		stroke: $table-stroke-color;
-	}
-
-	.svg-editing-node{
-		position: absolute;
-		background-color: rgba(200,200,200,0.75);
-		border-radius: 10px;
-		width: 20px;
-		height: 20px;
-		border: 2px solid gray;
-		/*display: none;*/
-	}
-
-	div.table {
-		position:absolute !important;
-		margin: 0px;
-		/*background-color: lightseagreen;*/
-		color: white;
-		border: none;
-		background: none;
-		border-radius: 5px;
-		padding: 50x;
-		font-size: 10px;
-		height: 50px;
-		width: 50px;
-		z-index: -30;
-		/*border: solid 1px blue;*/
-	}
-
-	div.table svg{
-		position:absolute;
-		top: 0px;
-		left: 0px;
-		border: none;
-		height: inherit;
-		width:  inherit;
-		z-index: -20;
-		/*border: 1px solid red;*/
-	}
-
-	div.table-ui-control{
-		white-space: nowrap;
-		display: none;
-	}
-
-	div.table-ui-control-top{
-		position: absolute;
-		top: -40px;
-	}
-
-	div.table-ui-control-bottom{
-		position: absolute;
-		bottom: -55px;
-	}
-
-	div.table .table-drag-handle{
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		cursor: move;
-	}
-
-	div.table .table-rotate-clock-handle{
-		/*position: absolute;
-		bottom: 1px;
-		left: 0px;*/
-		cursor: pointer;
-	}
-
-	div.table .table-rotate-counterclock-handle{
-		/*position: absolute;
-		bottom: 1px;
-		left: -20px;*/
-		cursor: pointer;
-		-webkit-transform: scaleX(-1);
-		transform: scaleX(-1);
-	}
-
-	div.table .table-shape-switch-handle{
-		/*position: absolute;
-		top: 0px;
-		right: 0px;*/
-		cursor: pointer;
-	}
-
-	div.table .table-actions-button{
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		cursor: pointer;
-	}
-
-	div.table .ui-icon{
-		border-radius: 3px;
-		color: #333;
-		background-color: #fff;
-		border-color: #ccc;
-	}
-
-	div.ui-icon-gripsmall-diagonal-se{
-		background-position: -80px -224px;
-		right: -20px;
-		bottom: -20px;
-	}
-
-	div.ui-tool-bar{
-		position: absolute;
-		right: 10px;
-		top: 10px;
-	}
-
-	svg.area-blueprint{
-		height: inherit;
-		width: inherit;
-	}
-/*
-	div.table-srv-control{
-		display: block;
-	}*/
-
-	/*div.ui-rotatable-handle {
-		@extend .ui-icon;
-	    height: 16px;
-	    width: 16px;
-	    cursor: pointer;
-	    background-image: url("../../vendor/jquery-ui/images/ui-icons_9ccdfc_256x240.png");
-	    background-position: -128px -64px;
-	    background-repeat: no-repeat;
-	    left: 0px;
-	    bottom: 0px;
-	    position: absolute;
-	}*/
 
 	div.till-panel{
 		width: 100%;
@@ -243,6 +61,10 @@ body{
 		min-height: 2rem;
 	}
 
+	ul.tab-list-group{
+		margin-bottom: 0px;
+	}
+
 	button.menu-submenu-item{
 		padding: 2px !important;
 		white-space: normal;
@@ -255,6 +77,12 @@ body{
 	}
 
 	.menu-item-detail{
+		float: right;
+		margin-left: 1rem;
+		width: 5rem;
+	}
+
+	.menu-item-button{
 		float: right;
 		margin-left: 1rem;
 	}

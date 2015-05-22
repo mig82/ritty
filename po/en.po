@@ -9,8 +9,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: views/tab-payment.html:26
+msgid "BTN_CANCEL"
+msgstr "Cancel"
 
 #: directives/menu/venue-menu.html:15
 msgid "BTN_CLEAR"
@@ -33,13 +37,13 @@ msgid "BTN_FULL_SUBTAB"
 msgstr "Pay All"
 
 #. Verb
-#: views/begin.html:28
+#: views/begin.html:29
 msgid "BTN_GO"
 msgstr "Go"
 
-#: views/tab-payment.html:19
+#: views/tab-payment.html:25
 msgid "BTN_NEW_SUBTAB"
-msgstr "Pay Separately"
+msgstr "Partial Tab"
 
 #: directives/venue-tab.html:69
 msgid "BTN_OPEN"
@@ -53,9 +57,17 @@ msgstr "Serve"
 msgid "BTN_SPEC_PREP"
 msgstr "Special"
 
+#: views/tab-payment.html:36
+msgid "COMMON_ABREV_NUMBER"
+msgstr "No."
+
 #: views/begin.html:24
 msgid "COMMON_CURRENT_VENUE_IS"
 msgstr "Current venue is"
+
+#: views/tab-payment.html:37
+msgid "COMMON_DESC"
+msgstr "Desc"
 
 #. Verb
 #: directives/menu/venue-menu-list.html:12 directives/menu/venue-menu.html:12
@@ -71,54 +83,82 @@ msgstr "Who are you?"
 msgid "COMMON_MINPAX"
 msgstr "Min. pax"
 
-#: views/till.html:28
+#: views/till.html:41
 msgid "COMMON_OPENED"
 msgstr "Opened"
 
-#: directives/venue-tab.html:61 views/till.html:20
+#: directives/venue-tab.html:61 views/till.html:33
 msgid "COMMON_PAX"
 msgstr "Pax"
 
-#: views/till.html:49
+#: views/till.html:62
 msgid "COMMON_PAY"
 msgstr "Pay"
+
+#: views/tab-payment.html:44
+msgid "COMMON_PRICE_UNIT"
+msgstr "Unit price"
+
+#: views/tab-payment.html:43
+msgid "COMMON_PRICE_XN"
+msgstr "Price"
 
 #: views/begin.html:4
 msgid "COMMON_START"
 msgstr "Start"
 
-#: views/till.html:50
+#: views/till.html:63
 msgid "COMMON_STATS"
 msgstr "Stats"
 
-#: views/till.html:32
+#: views/tab-payment.html:39 views/till.html:45
 msgid "COMMON_STATUS"
 msgstr "Status"
 
-#: views/tab-payment.html:51
+#: views/tab-payment.html:84
 msgid "COMMON_SUBTAB"
 msgstr "Partial Tab"
 
-#: directives/venue-tab.html:3 views/tab-payment.html:8 views/till.html:16
-#: views/till.html:48
+#: directives/venue-tab.html:3 views/tab-payment.html:8 views/till.html:29
+#: views/till.html:61
 msgid "COMMON_TAB"
 msgstr "Tab"
 
-#: views/till.html:12
+#: views/till.html:25
 msgid "COMMON_TABLE"
 msgstr "Table"
 
-#: directives/venue-tab.html:57 views/till.html:24
+#: directives/venue-tab.html:57 views/till.html:37
 msgid "COMMON_TAG"
 msgstr "Tag"
 
-#: views/till.html:4
+#: views/till.html:7
 msgid "COMMON_TILL"
 msgstr "Cash Register"
 
 #: views/home.html:8
 msgid "COMMON_TOGGLE_NAV"
 msgstr "Navigation"
+
+#: views/tab-payment.html:40
+msgid "COMMON_TOTAL"
+msgstr "Total"
+
+#: views/tab-payment.html:66
+msgid "COMMON_TOTALS"
+msgstr "Totals"
+
+#: views/begin.html:27
+msgid "COMMON_VAT"
+msgstr "VAT"
+
+#: views/tab-payment.html:41
+msgid "COMMON_VAT_AMT"
+msgstr "VAT"
+
+#: views/tab-payment.html:42
+msgid "COMMON_VAT_PERCENT"
+msgstr "VAT rate"
 
 #: views/begin.html:26
 msgid "COMMON_WILL_SELECT_VENUE"
@@ -148,11 +188,11 @@ msgstr "Search menu"
 msgid "PHOLD_SEARCH_TABLES"
 msgstr "Search tables"
 
-#: app/js/models/MenuItem.js:21
+#: app/js/models/MenuItem.js:24
 msgid "PRICING_FIXED"
 msgstr "Fixed Price"
 
-#: app/js/models/MenuItem.js:22
+#: app/js/models/MenuItem.js:25
 msgid "PRICING_MARKET"
 msgstr "Daily Market Price"
 
@@ -164,49 +204,53 @@ msgstr "What venue are we hosting today?"
 msgid "Q_OPEN_NEW_TAB"
 msgstr "Open a new tab on this table?"
 
-#: app/js/models/Tab.js:200
-msgid "TAB_STATUS_CLOSED"
-msgstr "Closed"
-
-#: app/js/models/Tab.js:193
-msgid "TAB_STATUS_NEW"
-msgstr "New"
-
-#: app/js/models/Tab.js:201
-msgid "TAB_STATUS_PROBLEM"
-msgstr "Problem"
-
-#: app/js/models/Tab.js:194
-msgid "TAB_STATUS_SERVING"
-msgstr "Serving"
-
-#: app/js/models/Tab.js:198
-msgid "TAB_STATUS_WAITCHECK"
-msgstr "Waiting for check"
-
-#: app/js/models/TabItem.js:31
+#: app/js/models/TabItem.js:50
 msgid "TABITEM_STATUS_NEW"
 msgstr "New"
 
-#: app/js/models/TabItem.js:32
+#: app/js/models/TabItem.js:51
 msgid "TABITEM_STATUS_ORDERED"
 msgstr "Ordered"
 
-#: app/js/models/TabItem.js:34
+#: app/js/models/TabItem.js:53
 msgid "TABITEM_STATUS_PAID"
 msgstr "Paid"
 
-#: app/js/models/TabItem.js:35
+#: app/js/models/TabItem.js:54
 msgid "TABITEM_STATUS_SENTBACK"
 msgstr "Sent back"
 
-#: app/js/models/TabItem.js:33
+#: app/js/models/TabItem.js:52
 msgid "TABITEM_STATUS_SERVED"
 msgstr "Served"
 
-#: app/js/models/TabItem.js:36
+#: app/js/models/TabItem.js:55
 msgid "TABITEM_STATUS_SPILLED"
 msgstr "Spilled"
+
+#: app/js/models/Tab.js:236
+msgid "TAB_STATUS_CLOSED"
+msgstr "Closed"
+
+#: app/js/models/Tab.js:229
+msgid "TAB_STATUS_NEW"
+msgstr "New"
+
+#: app/js/models/Tab.js:237
+msgid "TAB_STATUS_PROBLEM"
+msgstr "Problem"
+
+#: app/js/models/Tab.js:230
+msgid "TAB_STATUS_SERVING"
+msgstr "Serving"
+
+#: app/js/models/Tab.js:234
+msgid "TAB_STATUS_WAITCHECK"
+msgstr "Waiting for check"
+
+#, fuzzy
+#~ msgid "COMMON_VAT &#37;"
+#~ msgstr "Start"
 
 #~ msgid "BTN_EDIT_VENUE"
 #~ msgstr "Edit Venue"
@@ -229,8 +273,11 @@ msgstr "Spilled"
 #~ msgid "MENU_OPTIONS<span class=\"caret\"></span>"
 #~ msgstr "Options"
 
-#~ msgid "COMMON_OPENED: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</i>"
-#~ msgstr "Opened: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</i>"
+#~ msgid ""
+#~ "COMMON_OPENED: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</"
+#~ "i>"
+#~ msgstr ""
+#~ "Opened: <i>{{selectedTable.tab.openingTime | date: \"hh:mm a\"}}</i>"
 
 #~ msgid "COMMON_CHOOSE_VENUE"
 #~ msgstr "What venue are hosting today?"

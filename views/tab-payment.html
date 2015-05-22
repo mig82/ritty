@@ -4,17 +4,15 @@
 			
 			<div class="panel panel-primary">
 
-				<div class="panel-heading">
-					<span translate>COMMON_TAB</span>
-					<span class="pull-right">{{tab.total | currency}}</span>
-					
+				<div class="panel-heading container-fluid">
+					<span class="col-xs-10" translate>COMMON_TAB</span>
+					<button type="button" class="btn btn-sm btn-success col-xs-2" translate>BTN_PAY</button>
 				</div>
 
 				<!--Tab controls. Show only if the table has an open tab-->
 				<div class="navbar navbar-default panel-heading-navbar" ng-if="tab">
 					<div class="container-fluid">
 						<form class="navbar-form navbar-right">
-							<button type="button" class="btn btn-sm btn-default" translate>BTN_FULL_SUBTAB</button>
 							<button type="button" class="btn btn-sm btn-default"
 									data-template="popovers/splitTabEven.html"
 									data-animation="am-flip-x"
@@ -23,59 +21,114 @@
 									bs-popover
 									translate>BTN_EVEN_SPLIT_SUBTAB</button>
 							<button type="button" class="btn btn-sm btn-default" ng-click="createSubTab()" translate>BTN_NEW_SUBTAB</button>
-							<button type="button" class="btn btn-sm btn-default" ng-click="cancelSubTabs()" translate>BTN_CANCEL</button>
+							<button type="button" class="btn btn-sm btn-default" ng-click="cancelSubTabs()" translate>BTN_CANCEL_SUBTABS</button>
 						</form>
 					</div>
 				</div>
 
 				<div class="panel-body menu-body">
+					<!--Already ordered items list. Show only if the table has an open tab-->
+					<!--The header for the tab items list-->
+					<ul ng-if="tab" class="list-group tab-list-group">
+						<li class="list-group-item tab-item">
+							<span class="text-primary" translate>COMMON_ABREV_NUMBER</span>
+							<span class="text-primary" translate>COMMON_DESC</span>
 
-						<!--Already ordered items list. Show only if the table has an open tab-->
-						<ul id="{{tab.id}}" class="pay-tab list-group connected-tab-list" ng-if="tab" ui-sortable="sortableOptions" ng-model="tab.tabItems">
-							<li id="{{item.id}}"
-								class="list-group-item tab-item"
-								ng-repeat="item in tab.tabItems track by $index">
-								<span>x{{item.xn}}</span>
-								<span>{{item.title | truncate:40}}</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_STATUS</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_TOTAL</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_VAT_AMT</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_VAT_PERCENT</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_PRICE_XN</span>
+							<span class="text-primary menu-item-detail" translate>COMMON_PRICE_UNIT</span>
+						</li>
+					</ul>
+					<!--ul id="{{tab.id}}" class="pay-tab list-group connected-tab-list" ng-if="tab" ui-sortable="sortableOptions" ng-model="tab.tabItems.items"-->
+					<ul id="{{tab.id}}" class="list-group connected-tab-list tab-list-group" ng-if="tab" ui-sortable="sortableOptions" ng-model="tab.tabItems.items">
+						<li id="{{item.id}}"
+							class="list-group-item tab-item"
+							ng-repeat="item in tab.tabItems.items track by $index">
+							<span>x{{item.xn}}</span>
+							<span>{{item.title | truncate:40}}</span>
 
-								<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>
-								<span class="menu-item-detail">{{item.updated  | date: "hh:mm a"}}</span>
-								<span class="menu-item-detail">{{item.pricexn | currency}}</span>
-								<span class="menu-item-detail">{{item.price | currency}}</span>
-							</li>
-						</ul>
+							<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>
+							<span class="menu-item-detail">{{item.total | currency}}</span>
+							<span class="menu-item-detail">{{item.vatAmtXn | currency}}</span>
+							<span class="menu-item-detail">{{item.vat * 100}}&#37;</span>
+							<span class="menu-item-detail">{{item.pricexn | currency}}</span>
+							<span class="menu-item-detail">{{item.price | currency}}</span>
+						</li>
+					</ul>
+					<!--The footer for the tab items list-->
+					<ul ng-if="tab" class="list-group tab-list-group tab-list-group">
+						<li class="list-group-item tab-item">
+							<span class="text-primary" translate>COMMON_TOTALS</span>
 
-					</div>
-
+							<span class="text-primary menu-item-detail">{{tab.status.desc | translate}}</span>
+							<span class="text-primary menu-item-detail">{{tab.tabItems.total() | currency}}</span>
+							<span class="text-primary menu-item-detail">{{tab.tabItems.vatTotal | currency}}</span>
+							<span class="text-primary menu-item-detail">&nbsp;</span>
+							<span class="text-primary menu-item-detail">{{tab.tabItems.subTotal | currency}}</span>
+							<span class="text-primary menu-item-detail">&nbsp;</span>
+						</li>
+					</ul>
+				</div>
 			</div>
-
 		</div>
 		<div class="col-xs-6 subtabs-viewport">
 
+		<!--Render each subtab created for this tab-->
 			<div class="panel panel-primary" ng-repeat="subtab in tab.subTabs track by $index">
-
-				<div class="panel-heading">
-					<span translate>COMMON_SUBTAB</span>
-					<span>{{subtab.id | tabId}}</span>
-					<span class="pull-right">{{subtab.total | currency}}</span>
+				<div class="panel-heading container-fluid">
+					<div class="col-xs-10">
+						<span translate>COMMON_SUBTAB</span>
+						<span>{{subtab.id | tabId}}</span>
+					</div>
+					<button type="button" class="btn btn-sm btn-success col-xs-2" translate>BTN_PAY</button>
 				</div>
+				<!--The header for the subtab items list-->
+				<ul ng-if="tab" class="list-group tab-list-group">
+					<li class="list-group-item tab-item">
+						<span class="text-primary" translate>COMMON_ABREV_NUMBER</span>
+						<span class="text-primary" translate>COMMON_DESC</span>
 
-				<ul id="{{subtab.id}}" class="pay-tab list-group connected-tab-list" ui-sortable="sortableOptions" ng-model="subtab.tabItems">
+						<span class="text-primary menu-item-detail" translate>COMMON_STATUS</span>
+						<span class="text-primary menu-item-detail" translate>COMMON_TOTAL</span>
+						<span class="text-primary menu-item-detail" translate>COMMON_VAT_AMT</span>
+						<span class="text-primary menu-item-detail" translate>COMMON_VAT_PERCENT</span>
+						<span class="text-primary menu-item-detail" translate>COMMON_PRICE_XN</span>
+						<span class="text-primary menu-item-detail" translate>COMMON_PRICE_UNIT</span>
+					</li>
+				</ul>
+				<ul id="{{subtab.id}}" class="pay-tab list-group connected-tab-list tab-list-group" ui-sortable="sortableOptions" ng-model="subtab.tabItems.items">
 					<li id="{{item.id}}"
 						class="list-group-item tab-item"
-						ng-repeat="item in subtab.tabItems track by $index">
+						ng-repeat="item in subtab.tabItems.items track by $index">
 						<span>x{{item.xn}}</span>
 						<span ng-if="item.fraction">(x{{item.fraction}})</span>
 						<span>{{item.title | truncate:40}}</span>
 
 						<span class="menu-item-detail"><em>{{item.status.desc | translate}}</em></span>
-						<span class="menu-item-detail">{{item.updated  | date: "hh:mm a"}}</span>
+						<span class="menu-item-detail">{{item.total | currency}}</span>
+						<span class="menu-item-detail">{{item.vatAmtXn | currency}}</span>
+						<span class="menu-item-detail">{{item.vat * 100}}&#37;</span>
 						<span class="menu-item-detail">{{item.pricexn | currency}}</span>
 						<span class="menu-item-detail">{{item.price | currency}}</span>
 					</li>
 				</ul>
-			</div>
-			
+				<!--The footer for the subtab items list-->
+				<ul ng-if="tab" class="list-group tab-list-group tab-list-group">
+					<li class="list-group-item tab-item">
+						<span class="text-primary" translate>COMMON_TOTALS</span>
+
+						<span class="text-primary menu-item-detail">{{subtab.status.desc | translate}}</span>
+						<span class="text-primary menu-item-detail">{{subtab.tabItems.total() | currency}}</span>
+						<span class="text-primary menu-item-detail">{{subtab.tabItems.vatTotal | currency}}</span>
+						<span class="text-primary menu-item-detail">&nbsp;</span>
+						<span class="text-primary menu-item-detail">{{subtab.tabItems.subTotal | currency}}</span>
+						<span class="text-primary menu-item-detail">&nbsp;</span>
+					</li>
+				</ul>				
+			</div>	
 		</div>
 	</div>
 </div>

@@ -35,7 +35,7 @@ chrome.app.runtime.onLaunched.addListener(function(launchData) {
 		}
 	);
 
-	console.log("Ritty has launched. Time elapsed: %s milliseconds", Date.now() - start );
+	console.log("Ritty has launched. Time elapsed: " + Date.now() - start + " milliseconds");
 
 });
 
@@ -45,7 +45,7 @@ chrome.app.runtime.onRestarted.addListener(function()
 	var start = Date.now();
 	console.log("Ritty is being restarted");
 	//
-	console.log("Ritty has restarted. Time elapsed: %s milliseconds", Date.now() - start );
+	console.log("Ritty has restarted. Time elapsed: " + Date.now() - start + " milliseconds");
 
 });
 
@@ -60,7 +60,7 @@ chrome.runtime.onInstalled.addListener(function()
 	//At a minimum, store user settings so that it is still available if app is reinstalled.
 	console.log("Ritty is being installed or updated...");
 
-	console.log("Ritty has been installed or updated. Time elapsed: %s milliseconds", Date.now() - start );
+	console.log("Ritty has been installed or updated. Time elapsed: " + Date.now() - start + " milliseconds");
 });
 
 //TODO: do clean-up tasks and save state before the event page is unloaded.
@@ -71,7 +71,7 @@ chrome.runtime.onSuspend.addListener(function()
 	var start = Date.now();
 	console.log("Ritty is being suspended...");
 
-	console.log("Ritty has been suspended. Time elapsed: %s milliseconds", Date.now() - start );
+	console.log("Ritty has been suspended. Time elapsed: " + Date.now() - start + " milliseconds");
 });
 
 //TODO: Tasks to do if suspension is aborted.

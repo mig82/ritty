@@ -10,24 +10,24 @@
 			"venue_id": "v1",
 			"menu_id": "m1",
 			"title": "Dinner Menu",
-			"description": "Some of the finest creations of our chef with a...",
+			"desc": "Some of the finest creations of our chef with a...",
 			"submenus": [
 				{
 					"title" : "Classic Cocktails",
-					"description": "The finest spirits with our touch of magic",
+					"desc": "The finest spirits with our touch of magic",
 					"items": [
-						{"title": "Gin & Tonic", 	"description": "James Bond's drik...",					"pricing": "PRICING_FIXED", "price": 15.00,	"minpax": 1, "callories": 1200, "eta": 10,	"tags": ["Premium gin", "Home special"]},
-						{"title": "Cosmopolitan",	"description": "Carry Bradshaw's choice...",			"pricing": "PRICING_FIXED", "price": 18.00,	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["Home special"]},
-						{"title": "Pisco Sour", 	"description": "Perubian spirit with a touch of...",	"pricing": "PRICING_FIXED", "price": 12.00,	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["Strong"]}		
-					]
+						{"title": "Gin & Tonic", 	"desc": "James Bond's drik...",					"pricing": "PRICING_FIXED", "price": 15.00,	"vat": 0.21, "minpax": 1, "callories": 1200, "eta": 10,	"tags": ["Premium gin", "Home special"]},
+						{"title": "Cosmopolitan",	"desc": "Carry Bradshaw's choice...",			"pricing": "PRICING_FIXED", "price": 18.00,	"vat": 0.21, "minpax": 1, "callories": 1000, "eta": 10,	"tags": ["Home special"]},
+						{"title": "Pisco Sour", 	"desc": "Perubian spirit with a touch of...",	"pricing": "PRICING_FIXED", "price": 12.00,	"vat": 0.21, "minpax": 1, "callories": 300,  "eta": 7,	"tags": ["Strong"]}		
+					] 
 				},
 				{
 					"title" : "Our Creations",
-					"description": "Our award winning creations.",
+					"desc": "Our award winning creations.",
 					"items": [
-						{"title": "Crazy Volcano", 		"description": "An explosion of lava...",			"pricing": "PRICING_FIXED", "price": 15.00,	"minpax": 2, "callories": 1200, "eta": 10,	"tags": ["Strong"]},
-						{"title": "Iguana's skin",		"description": "Kiwi liquor with...",				"pricing": "PRICING_FIXED", "price": 18.00,	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["Mild"]},
-						{"title": "Super Screw Driver", "description": "Get wasted with this monster...",	"pricing": "PRICING_FIXED", "price": 12.00,	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["Super strong"]}		
+						{"title": "Crazy Volcano", 		"desc": "An explosion of lava...",			"pricing": "PRICING_FIXED", "price": 15.00,	"vat": 0.21, "minpax": 2, "callories": 1200, "eta": 10,	"tags": ["Strong"]},
+						{"title": "Iguana's skin",		"desc": "Kiwi liquor with...",				"pricing": "PRICING_FIXED", "price": 18.00,	"vat": 0.21, "minpax": 1, "callories": 1000, "eta": 10,	"tags": ["Mild"]},
+						{"title": "Super Screw Driver", "desc": "Get wasted with this monster...",	"pricing": "PRICING_FIXED", "price": 12.00,	"vat": 0.21, "minpax": 1, "callories": 300,  "eta": 7,	"tags": ["Super strong"]}		
 					]
 				}
 			]

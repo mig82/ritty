@@ -3,6 +3,8 @@ var app = angular.module('ritty', ['ngRoute', 'ngTouch', 'indexedDB', 'mgcrea.ng
 
 .config(['$routeProvider', '$indexedDBProvider', function($routeProvider, $indexedDBProvider) {
 	
+	"use strict";
+
 	$indexedDBProvider.connection('rittyDB')
 		.upgradeDatabase(1, function(event, db, tx){
 			var venueStore = db.createObjectStore('venues', {keyPath: 'id'});

@@ -22,7 +22,7 @@ angular.module('ritty').filter('menufilter', function() {
 
 					console.log("item %o", item);
 					_title = item.title.toLowerCase();
-					_descr = item.description.toLowerCase();
+					_descr = item.desc.toLowerCase();
 					if(_title.indexOf(_query)>=0 || _descr.indexOf(_query)>=0)
 					_filtered.push(item);
 					console.log('_filtered %o', _filtered);

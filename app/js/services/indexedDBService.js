@@ -52,16 +52,16 @@ angular.module('ritty').factory('IndexedDBService', [function(){
 					"3": {"id": "3", "shape":"ellipse", "x":10,		"y":200, 	"w":50,	"h":50,	"rotation":0.00, "tag": "pepe"}},
 				"menu" : {
 					"title": "Dinner Menu",
-					"description": "Some of the finest creations of our chef with a...",
+					"desc": "Some of the finest creations of our chef with a...",
 					"submenus": [
 						{
 							"title" : "Main Courses",
-							"description": "Our main courses offer a variety of...",
+							"desc": "Our main courses offer a variety of...",
 							"items": [
-								{"name": "Lamb chops", 			"description": "Delicious lamb chops with...",	"price": 15.00, 	"minpax": 2, "callories": 1200, "eta": 10,	"tags": ["very spicy", "chefs specialty"]},
-								{"name": "Grilled salmon",		"description": "Delicious griled salmon",		"price": 18.00, 	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["chefs specialty"]},
-								{"name": "Cucumber carpaccio", 	"description": "Raw cucumber with parmessan",	"price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["vegetarian"]},
-								{"name": "Mahalo Lobster", 		"description": "Hawaian style lobster",			"price": "market",	"minpax": 2, "callories": 2000,	"eta": 15,	"tags": ["from the sea", "chefs specialty"]}
+								{"name": "Lamb chops", 			"desc": "Delicious lamb chops with...",	"price": 15.00, 	"minpax": 2, "callories": 1200, "eta": 10,	"tags": ["very spicy", "chefs specialty"]},
+								{"name": "Grilled salmon",		"desc": "Delicious griled salmon",		"price": 18.00, 	"minpax": 1, "callories": 1000, "eta": 10,	"tags": ["chefs specialty"]},
+								{"name": "Cucumber carpaccio", 	"desc": "Raw cucumber with parmessan",	"price": 12.00, 	"minpax": 1, "callories": 300, 	"eta": 7,	"tags": ["vegetarian"]},
+								{"name": "Mahalo Lobster", 		"desc": "Hawaian style lobster",			"price": "market",	"minpax": 2, "callories": 2000,	"eta": 15,	"tags": ["from the sea", "chefs specialty"]}
 							]
 						} 
 					]

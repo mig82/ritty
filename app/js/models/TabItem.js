@@ -5,6 +5,8 @@
 */
 angular.module('ritty').factory('TabItem', ['gettext', 'TabSequencerService', function(gettext, TabSequencerService){
 
+	"use strict";
+
 	function TabItem(id, title, xn, price, vat){
 
 		if(!id){
@@ -13,22 +15,39 @@ angular.module('ritty').factory('TabItem', ['gettext', 'TabSequencerService', fu
 		
 		this.title = title;
 		this.xn = xn;
+		
 		this.price = price;
-		this.vat = vat;
-		this.pricexn = xn * price;
-		this.vatxn = xn * vat;
+		this.setVat(vat);
+		this.setXN(xn);
+		
 		//this.orderTime = new Date();
 		this.status = TabItem.STATUS_NEW;
 		this.updated = new Date();
 	}
 
-	TabItem.prototype.setXN = function(xn){
-		this.pricexn = Math.round10(xn * this.price, -2);
-		this.vatxn =   Math.round10(xn * this.vat, -2);
-		this.xn = Math.round10(xn, -2);
+	TabItem.prototype.setVat = function(vat){
+		this.vat = vat;
+		this.vatAmt = Math.round10(this.price * this.vat, -2);
+
+		if (typeof(this.xn != "undefined"))
+		{
+			this.vatAmtXn = Math.round10(this.xn * this.vatAmt, -2);
+			this.total = this.pricexn + this.vatAmtXn;
+		}
 	};
 
-	var STATUS_NEW		= {id: 00, desc: gettext('TABITEM_STATUS_NEW')};
+	TabItem.prototype.setXN = function(xn){
+		this.xn = Math.round10(xn, -2);
+		this.pricexn = Math.round10(xn * this.price, -2);
+
+		if (typeof(this.vatAmt != "undefined"))
+		{
+			this.vatAmtXn = Math.round10(xn * this.vatAmt, -2);
+			this.total = this.pricexn + this.vatAmtXn;
+		}
+	};
+
+	var STATUS_NEW		= {id:  0, desc: gettext('TABITEM_STATUS_NEW')};
 	var STATUS_ORDERED	= {id: 10, desc: gettext('TABITEM_STATUS_ORDERED')};
 	var STATUS_SERVED	= {id: 20, desc: gettext('TABITEM_STATUS_SERVED')};
 	var STATUS_PAID		= {id: 20, desc: gettext('TABITEM_STATUS_PAID')};

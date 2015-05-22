@@ -5,12 +5,15 @@
 */
 angular.module('ritty').factory('MenuItem', ['gettext', function(gettext){
 
-	function MenuItem(title, description, pricing, price, minpax, callories, eta){
+	"use strict";
+	
+	function MenuItem(title, desc, pricing, price, vat, minpax, callories, eta){
 		
 		this.title =  title;
-		this.description =  description;
+		this.desc =  desc;
 		this.pricing =  pricing
 		this.price =  price;
+		this.vat = vat;
 		this.minpax =  minpax;
 		this.callories = callories;
 		this.eta = eta;
@@ -32,9 +35,10 @@ angular.module('ritty').factory('MenuItem', ['gettext', function(gettext){
 		
 		var menuItem = new MenuItem(
 			obj.title,
-			obj.description,
+			obj.desc,
 			obj.pricing,
 			obj.price,
+			obj.vat,
 			obj.minpax,
 			obj.callories,
 			obj.eta

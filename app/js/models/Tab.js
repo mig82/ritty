@@ -3,7 +3,9 @@
 *
 * Defines the Tab class which defines the objects in the tab property of the Tab class.
 */
-angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerService', function(gettext, TabItem, TabSequencerService){
+angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabItems', 'TabSequencerService', function(gettext, TabItem, TabItems, TabSequencerService){
+
+	"use strict";
 
 	function Tab(parentTabId, id, tag, pax){
 		
@@ -24,36 +26,37 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		this.subTabSeq = 1;
 		this.tag = tag;
 		this.pax = pax;
-		this.newItemsTotal = 0.00;
-		this.total = 0.00;
-		this.vat = 0.00;
+		//this.newItemsTotal = 0.00;
+		//this.total = 0.00;
+		//this.vatTotal = 0.00;
 		this.tip = 0.00;
 		this.status = Tab.STATUS_NEW;
 		this.openingTime = new Date();
-		this.newItems = new Array(); //TabItems which have not been sent for preparation yet.
-		this.tabItems = new Array(); //TabItems which have already been sent for preparation.
+		this.newItems = new TabItems(); //TabItems which have not been sent for preparation yet.
+		this.tabItems = new TabItems(); //TabItems which have already been sent for preparation.
 		this.subTabs; //An array of children tabs used for splitting the bill when paying. Will be lazy initialized.
 	}
 
 	Tab.prototype.addTabItem = function(tabItem){
 		
 		if(tabItem.status == TabItem.STATUS_NEW){
-			this.newItems.unshift(tabItem);
+			this.newItems.add(tabItem);
 		}
 		else{
-			this.tabItems.unshift(tabItem);
+			this.tabItems.add(tabItem);
 		}
-		this._addToTabTotals(tabItem);
+		//this._addToTabTotals(tabItem);
 	};
 
-	Tab.prototype.addAnotherTabItem = function(tabItem){
-		tabItem.setXN(tabItem.xn+1);
-		this._addToTabTotals(tabItem, 1);
+	Tab.prototype.addAnotherNewItem = function(tabItem){
+		/*tabItem.setXN(tabItem.xn + 1);
+		this._addToTabTotals(tabItem, 1);*/
+		this.newItems.addAnother(tabItem);
 	};
 
 	Tab.prototype.removeNewItem = function(tabItem)
 	{
-		if(tabItem.xn > 1)
+		/*if(tabItem.xn > 1)
 		{
 			tabItem.setXN(tabItem.xn-1);
 		}
@@ -62,17 +65,18 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 			this.newItems.splice(this.newItems.indexOf(tabItem), 1);
 		}
 
-		this._subtractFromTabTotals(tabItem);
+		this._subtractFromTabTotals(tabItem);*/
+		this.newItems.remove(tabItem);
 	};
 
 	Tab.prototype.popTabItem = function()
 	{
 		var tabItem = this.tabItems.pop();
-		this._subtractFromTabTotals(tabItem, true);
+		//this._subtractFromTabTotals(tabItem, true);
 		return tabItem;
 	};
 
-	Tab.prototype._addToTabTotals = function(tabItem, xn)
+	/*Tab.prototype._addToTabTotals = function(tabItem, xn)
 	{
 		if(xn)
 		{
@@ -81,7 +85,7 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 			}
 			else{
 				this.total += xn * tabItem.price;
-				//this.vat += xn * tabItem.vat;
+				this.vatTotal += xn * tabItem.vatAmt;
 			}
 		}
 		else
@@ -91,12 +95,12 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 			}
 			else{
 				this.total += tabItem.pricexn;
-				//this.vat += tabItem.vatxn;
+				this.vatTotal += tabItem.vatAmtXn;
 			}
 		}
-	};
+	};*/
 
-	Tab.prototype._subtractFromTabTotals = function(tabItem, removeAll){
+	/*Tab.prototype._subtractFromTabTotals = function(tabItem, removeAll){
 		
 		if(tabItem.status == TabItem.STATUS_NEW)
 		{
@@ -108,38 +112,50 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		else
 		{	
 			if(removeAll)
-			this.total -= tabItem.pricexn;
+			{
+				this.total -= tabItem.pricexn;
+				this.vatTotal -= tabItem.vatAmtXn
+			}
 			else
-			this.total -= tabItem.price;
-			//this.vat -= tabItem.vat;
+			{
+				this.total -= tabItem.price;
+				this.vatTotal -= tabItem.vatAmt;
+			}
 		}
-	};
+	};*/
 
-	Tab.prototype.sendForPrep = function(){
+	Tab.prototype.sendForPrep = function()
+	{
+		var l = this.newItems.items.length;
 
-		var l = this.newItems.length;
-		for (var i = 0; i < l; i++) {
-			var item = this.newItems[i];
+		for (var i = 0; i < l; i++)
+		{
+			var item = this.newItems.items[i];
 			item.transition();
 			this.tabItems.push(item);
 		};
 
-		this.total += this.newItemsTotal;
-		this.newItemsTotal = 0.00;
-		this.newItems = new Array();
+		//this.total += this.newItemsTotal;
+		/*this.newItemsTotal = 0.00;
+		this.newItems = new Array();*/
+		this.newItems.purge();
 
 		if(this.status.id == Tab.STATUS_NEW.id)
 		this.status = Tab.STATUS_SERVING;
 	};
 
 	Tab.prototype.createSubTab = function(){
+
+		//Keep a backup of the original items in the tab so the split can be undone.
+		this._backupTabItems();
+		
 		if(!this.subTabs)
 		{
 			//Keep a backup of the original items in the tab so the split can be undone.
 			this._backupTabItems();
 			this.subTabs = new Array();
 		}
-		this.subTabs.push(   new Tab(this.id, this.id.concat(".", this.subTabSeq++))   );
+		this.subTabs.push( new Tab(this.id, this.id.concat(".", this.subTabSeq++)) );
 	};
 
 	Tab.prototype.syncTotals = function(){
@@ -147,7 +163,7 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		//TODO: Sync totals for newItems?
 
 		//Sync totals for tabItems.
-		var _total = 0.00;
+		/*var _total = 0.00;
 		var _vat = 0.00;
 		var tabLength = this.tabItems.length;
 		for (var i = 0; i < tabLength; i++) {
@@ -155,7 +171,8 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 			_vat += this.tabItems[i].vatxn;
 		};
 		this.total = _total;
-		this.vat = _vat;
+		this.vatAmt = _vat;*/
+		this.tabItems.syncTotals();
 
 		//Sync totals for each child tab in subTabs.
 		if(this.subTabs){
@@ -166,30 +183,34 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		}
 	};
 
+	/* Split each item from the tab evenly among a number of parties.
+	*/
 	Tab.prototype.splitEven = function(){
 		
 		//Keep a backup of the original items in the tab so the split can be undone.
 		this._backupTabItems();
 
-		var m = this.tabItems.length;
+		var m = this.tabItems.items.length;
 		var t = this.subTabs.length;
 
 		//for each of the m items in the tab...	
-		for (var i = m-1; i >= 0; i--) {
-
+		for (var i = m-1; i >= 0; i--)
+		{
 			var item = this.popTabItem();
 			//var gcd = Math.gcd(item.xn, t)
 
 			var num = item.xn; //item.xn / gcd;
 			var den = t; //t / gcd;
-			
-			item.fraction = "".concat(num, "/", den);
+			if(num % den != 0) //If the split is not exact, add the fraction as additional info.
+			{
+				item.fraction = "".concat(num, "/", den);
+			}
+
 			item.setXN(num / den);
 
 			for (var j = t-1; j >= 0; j--) {
 				this.subTabs[j].addTabItem(angular.copy(item));
 			};
-
 		};
 	};
 
@@ -201,7 +222,7 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		if(!this.backup.tabItems){
 			this.backup.tabItems = angular.copy(this.tabItems)
 		}
-		console.log("Backed up %o", this);
+		console.log("Backed up %o", this.backup.tabItems);
 	};
 
 	Tab.prototype.cancelSubTabs = function(){
@@ -214,7 +235,7 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		console.log("Cancelled %o", this);
 	};
 
-	var STATUS_NEW				= {id: 00, desc: gettext('TAB_STATUS_NEW')};
+	var STATUS_NEW				= {id:  0, desc: gettext('TAB_STATUS_NEW')};
 	var STATUS_SERVING			= {id: 10, desc: gettext('TAB_STATUS_SERVING')};
 	//var STATUS_ENTREES		= {id: 13, desc: gettext('TAB_STATUS_ENTREES')};
 	//var STATUS_MAINS			= {id: 16, desc: gettext('TAB_STATUS_MAINS')};
@@ -255,12 +276,8 @@ angular.module('ritty').factory('Tab', ['gettext', 'TabItem', 'TabSequencerServi
 		tab.tip = obj.tip;
 		tab.status = obj.status;
 		tab.openingTime = obj.openingTime;
-
-		if(obj.newItems)
-		tab.newItems = TabItem.fromObjArray(obj.newItems);
-
-		if(obj.tabItems)
-		tab.tabItems = TabItem.fromObjArray(obj.tabItems);
+		tab.newItems = TabItems.fromObj(obj.newItems);
+		tab.tabItems = TabItems.fromObj(obj.tabItems);
 		
 		return tab;
 	};

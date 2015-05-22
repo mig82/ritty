@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: views/tab-payment.html:26
+msgid "BTN_CANCEL"
+msgstr ""
+
 #: directives/menu/venue-menu.html:15
 msgid "BTN_CLEAR"
 msgstr ""
@@ -25,11 +29,11 @@ msgid "BTN_FULL_SUBTAB"
 msgstr ""
 
 #. Verb
-#: views/begin.html:28
+#: views/begin.html:29
 msgid "BTN_GO"
 msgstr ""
 
-#: views/tab-payment.html:19
+#: views/tab-payment.html:25
 msgid "BTN_NEW_SUBTAB"
 msgstr ""
 
@@ -47,8 +51,16 @@ msgstr ""
 msgid "BTN_SPEC_PREP"
 msgstr ""
 
+#: views/tab-payment.html:36
+msgid "COMMON_ABREV_NUMBER"
+msgstr ""
+
 #: views/begin.html:24
 msgid "COMMON_CURRENT_VENUE_IS"
+msgstr ""
+
+#: views/tab-payment.html:37
+msgid "COMMON_DESC"
 msgstr ""
 
 #. Verb
@@ -66,57 +78,86 @@ msgstr ""
 msgid "COMMON_MINPAX"
 msgstr ""
 
-#: views/till.html:28
+#: views/till.html:41
 msgid "COMMON_OPENED"
 msgstr ""
 
 #: directives/venue-tab.html:61
-#: views/till.html:20
+#: views/till.html:33
 msgid "COMMON_PAX"
 msgstr ""
 
-#: views/till.html:49
+#: views/till.html:62
 msgid "COMMON_PAY"
+msgstr ""
+
+#: views/tab-payment.html:44
+msgid "COMMON_PRICE_UNIT"
+msgstr ""
+
+#: views/tab-payment.html:43
+msgid "COMMON_PRICE_XN"
 msgstr ""
 
 #: views/begin.html:4
 msgid "COMMON_START"
 msgstr ""
 
-#: views/till.html:50
+#: views/till.html:63
 msgid "COMMON_STATS"
 msgstr ""
 
-#: views/till.html:32
+#: views/tab-payment.html:39
+#: views/till.html:45
 msgid "COMMON_STATUS"
 msgstr ""
 
-#: views/tab-payment.html:51
+#: views/tab-payment.html:84
 msgid "COMMON_SUBTAB"
 msgstr ""
 
 #: directives/venue-tab.html:3
 #: views/tab-payment.html:8
-#: views/till.html:16
-#: views/till.html:48
+#: views/till.html:29
+#: views/till.html:61
 msgid "COMMON_TAB"
 msgstr ""
 
-#: views/till.html:12
+#: views/till.html:25
 msgid "COMMON_TABLE"
 msgstr ""
 
 #: directives/venue-tab.html:57
-#: views/till.html:24
+#: views/till.html:37
 msgid "COMMON_TAG"
 msgstr ""
 
-#: views/till.html:4
+#: views/till.html:7
 msgid "COMMON_TILL"
 msgstr ""
 
 #: views/home.html:8
 msgid "COMMON_TOGGLE_NAV"
+msgstr ""
+
+#: views/tab-payment.html:40
+msgid "COMMON_TOTAL"
+msgstr ""
+
+#: views/tab-payment.html:66
+msgid "COMMON_TOTALS"
+msgstr ""
+
+#: views/begin.html:27
+msgid "COMMON_VAT"
+msgstr ""
+
+#: views/tab-payment.html:41
+msgid "COMMON_VAT_AMT"
+msgstr ""
+
+#: views/tab-payment.html:42
+msgid "COMMON_VAT_PERCENT"
 msgstr ""
 
 #: views/begin.html:26
@@ -148,11 +189,11 @@ msgstr ""
 msgid "PHOLD_SEARCH_TABLES"
 msgstr ""
 
-#: app/js/models/MenuItem.js:21
+#: app/js/models/MenuItem.js:24
 msgid "PRICING_FIXED"
 msgstr ""
 
-#: app/js/models/MenuItem.js:22
+#: app/js/models/MenuItem.js:25
 msgid "PRICING_MARKET"
 msgstr ""
 
@@ -164,46 +205,46 @@ msgstr ""
 msgid "Q_OPEN_NEW_TAB"
 msgstr ""
 
-#: app/js/models/Tab.js:200
-msgid "TAB_STATUS_CLOSED"
-msgstr ""
-
-#: app/js/models/Tab.js:193
-msgid "TAB_STATUS_NEW"
-msgstr ""
-
-#: app/js/models/Tab.js:201
-msgid "TAB_STATUS_PROBLEM"
-msgstr ""
-
-#: app/js/models/Tab.js:194
-msgid "TAB_STATUS_SERVING"
-msgstr ""
-
-#: app/js/models/Tab.js:198
-msgid "TAB_STATUS_WAITCHECK"
-msgstr ""
-
-#: app/js/models/TabItem.js:31
+#: app/js/models/TabItem.js:50
 msgid "TABITEM_STATUS_NEW"
 msgstr ""
 
-#: app/js/models/TabItem.js:32
+#: app/js/models/TabItem.js:51
 msgid "TABITEM_STATUS_ORDERED"
 msgstr ""
 
-#: app/js/models/TabItem.js:34
+#: app/js/models/TabItem.js:53
 msgid "TABITEM_STATUS_PAID"
 msgstr ""
 
-#: app/js/models/TabItem.js:35
+#: app/js/models/TabItem.js:54
 msgid "TABITEM_STATUS_SENTBACK"
 msgstr ""
 
-#: app/js/models/TabItem.js:33
+#: app/js/models/TabItem.js:52
 msgid "TABITEM_STATUS_SERVED"
 msgstr ""
 
-#: app/js/models/TabItem.js:36
+#: app/js/models/TabItem.js:55
 msgid "TABITEM_STATUS_SPILLED"
+msgstr ""
+
+#: app/js/models/Tab.js:236
+msgid "TAB_STATUS_CLOSED"
+msgstr ""
+
+#: app/js/models/Tab.js:229
+msgid "TAB_STATUS_NEW"
+msgstr ""
+
+#: app/js/models/Tab.js:237
+msgid "TAB_STATUS_PROBLEM"
+msgstr ""
+
+#: app/js/models/Tab.js:230
+msgid "TAB_STATUS_SERVING"
+msgstr ""
+
+#: app/js/models/Tab.js:234
+msgid "TAB_STATUS_WAITCHECK"
 msgstr ""

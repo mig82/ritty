@@ -3,12 +3,16 @@
 		{
 			"id": "v1",
 			"name": "Cocktail Bar",
-			"description": "A template for a cocktail bar."
+			"desc": "A template for a cocktail bar.",
+			"vat": 0.21,
+			"prices_inc_vat": true
 		},
 		{
 			"id": "v2",
 			"name": "My Restaurant",
-			"description": "A template for a restaurant."
+			"desc": "A template for a restaurant.",
+			"vat": 0.10,
+			"prices_inc_vat": true
 		}
 	]
 }

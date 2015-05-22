@@ -1,9 +1,9 @@
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<span translate>COMMON_TAB</span>
-		<span class="pull-right">{{tab.total | currency}}</span>
-		<span class="pull-right" ng-if="tab.newItemsTotal>0">&nbsp;+&nbsp;</span>
-		<span class="pull-right" ng-if="tab.newItemsTotal>0"><small>{{tab.newItemsTotal | currency}}</small></span>
+		<span class="pull-right">{{tab.tabItems.subTotal | currency}}</span>
+		<span class="pull-right" ng-if="tab.newItems.subTotal>0">&nbsp;+&nbsp;</span>
+		<span class="pull-right" ng-if="tab.newItems.subTotal>0"><small>{{tab.newItems.subTotal | currency}}</small></span>
 	</div>
 
 	<!--Tab controls. Show only if the table has an open tab-->
@@ -19,12 +19,12 @@
 
 		<!--New items list. Show only if the table has an open tab-->
 		<ul class="list-group" ng-if="tab">
-			<li class="list-group-item menu-submenu-item" ng-repeat="item in tab.newItems | orderBy:'-updated ' track by $index">
+			<li class="list-group-item menu-submenu-item" ng-repeat="item in tab.newItems.items | orderBy:'-updated ' track by $index">
 				<span>x{{item.xn}}</span>
 				<span>{{item.title | truncate:20}}</span>
 
-				<button type="button" class="btn btn-primary btn-xs menu-item-detail" ng-disabled="item.status.id>0" ng-click="addAnotherToTab(item)">+</button>
-				<button type="button" class="btn btn-primary btn-xs menu-item-detail" ng-disabled="item.status.id>0" ng-click="removeItemFromTab(item)">-</button>
+				<button type="button" class="btn btn-primary btn-xs menu-item-button" ng-disabled="item.status.id>0" ng-click="addAnotherToTab(item)">+</button>
+				<button type="button" class="btn btn-primary btn-xs menu-item-button" ng-disabled="item.status.id>0" ng-click="removeItemFromTab(item)">-</button>
 				<!--span class="menu-item-detail"><small>{{item.updated  | date: "hh:mm a"}}</small></span-->
 				<span class="menu-item-detail">{{item.pricexn | currency}}</span>
 				<!--span class="menu-item-detail">{{item.price | currency}}</span-->
@@ -33,7 +33,7 @@
 
 		<!--Already ordered items list. Show only if the table has an open tab-->
 		<ul class="list-group" ng-if="tab">
-			<li class="list-group-item menu-submenu-item" ng-repeat="item in tab.tabItems | orderBy:'-updated ' track by $index">
+			<li class="list-group-item menu-submenu-item" ng-repeat="item in tab.tabItems.items | orderBy:'-updated ' track by $index">
 				<span>x{{item.xn}}</span>
 				<span>{{item.title | truncate:20}}</span>
 
